@@ -16,4 +16,25 @@ A DISTRIBUTED VCS creates a COPY of the source code on each user's machine. That
 
 
 
-*
+git commands we've used in on day one:
+
+git status			check the current state of git's files tracking
+git config			is used to modify git's configurations
+git clone			copies all files from a remote repository onto your local machine
+git add .			adds files from your working directory into your staging directory
+git add [filename1], [filename2], etc
+git commit -m "my message"	creates a "new commit version" from your staging directory
+git push			sends your LOCAL changes to the REMOTE repository
+git pull			is git fetch + git merge
+	git fetch		go to the remote git (gitlab) and retrieve any changes it has
+					but will not merge them yet
+	git merge		take one branch's content and merge it into the current branch
+git checkout [branchname]	changes current branch to another branch
+git checkout -b [branchname]	changes current branch IF it exists, if not create a new branch
+					and change to it
+git log				lists all commit versions
+git revert			reverts an existing commit version
+git stash			removes working directory changes (can be retrieved later)
+git remote -v			lists your fetch and push URLs
+git branch			is used for specific commands for a branch
+
