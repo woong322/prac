@@ -14,3 +14,6 @@ a CENTRAL VCS uses a central location online to store all source code, data, and
 
 A DISTRIBUTED VCS creates a COPY of the source code on each user's machine. That way, if you lose internet you can still work or see what the most recent changes you "pulled" are. Are you make change to you LOCAL version of the code base, then you "push" those change to an online host so that your team members may "pull" your changes.
 
+
+
+*
