@@ -1,0 +1,12 @@
+>>>>>What is a repository?
+A repo is a place where you store "things".
+
+>>>>>What is git?
+Git is a version control system (VCS) and collaboration tool. In short, it's a tool that manages file history/versions (e.g. source code files). It keeps track of changes and provides tools to share content.
+
+>>>>>>What is gitlab/github?
+Github/Gitlab are online git hosting services. HOsting services can also supply additional tools that make collaboration for source code even easier; each host may have different services. Capitalism, amirite?
+
+
+
+
