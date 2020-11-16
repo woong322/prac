@@ -8,5 +8,9 @@ Git is a version control system (VCS) and collaboration tool. In short, it's a t
 Github/Gitlab are online git hosting services. HOsting services can also supply additional tools that make collaboration for source code even easier; each host may have different services. Capitalism, amirite?
 
 
+>>>>>>What is a distributed VCS vs a central VCS?
 
+a CENTRAL VCS uses a central location online to store all source code, data, and records. There are some issues with this, however. What happens if you lose internet? or the website goes down? YOu don't have access to your data anymore.
+
+A DISTRIBUTED VCS creates a COPY of the source code on each user's machine. That way, if you lose internet you can still work or see what the most recent changes you "pulled" are. Are you make change to you LOCAL version of the code base, then you "push" those change to an online host so that your team members may "pull" your changes.
 
