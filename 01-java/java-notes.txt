@@ -1,0 +1,92 @@
+>>>>>>What is Java?
+>An object oriented programming language based in C and maintained by Oracle.
+
+>>>>>>Why Java? Why use Java?
+-Platform Agnostic (doesn't matter what OS is being used)
+	>"Write once, run anywhere"
+	>because of the JVM, We'll talk more about this in a sec
+-Widely Popular & Grandfathered in
+	>"Grandfathered in" means that many companies are using Java
+		so it isn't going away anytime soon
+-Rich API (lots of libraries) & documentation
+-Easy to use
+	-based in C
+	-Object Oriented
+	-Java is Strongly typed (easier to debug)
+	-versatile
+	-Garbage Collection
+	-You don't have to use pointers
+	-multithreaded
+-FREE!!!
+
+
+>>>>>>WHAT IS AN OBJECT?
+>An instance of a class
+>An object has State and Behavior.
+	>States are attributes of the object (Variables)
+	>Behaviors are actions the object can take (Methods)
+>It's a virtual representation of a real world object/entity.
+	>THIS makes coding easier to understand since it mimics the real world,
+		something we already understand.
+
+
+>>>>>>>WHAT IS A CLASS?
+>A class is a  blueprint for objects.
+>They are used to create objects, it's a template.
+>There can be MANY objects made form the one blueprint....there will only ever be one blueprint for this specific type of object.
+
+
+>>>Tangent: What is the difference between a function and a method?
+>A function is a block of code/functionality.
+>A method is a block of code/functionality THAT IS ATTACHED TO AN OBJECT.
+
+
+>>>>>>What is OOP?
+>Object Oriented Programming
+>Proramming that utilizes object to simulate the real world
+
+>>>>>What are the Four Pillars of OOP?
+APIE is a helpful acronym
+
+Abstraction- Demonstrating WHAT something does, without revealing HOW that action is performed.
+	aka HIding Implementation/functionality.
+
+	example: Santa claus brings us an iPhone when we write a letter, we dont' know HOW
+		Santa  gets that iPhone.
+
+	WHERE can we find this in code?
+		Abstract Classes & Interfaces
+
+Polymorphism- The ability for an entity to behavior/act differently depending
+	on the scenario/stimuli
+	aka Polymorphism means "many forms".
+	
+	example: water, water can act differently depending on the temp or container
+
+	WHERE can we find this in code?
+		overloading, overriding, upcasting, downcasting, generics, etc
+	
+
+Inheritance- The passing of attributes/behaviors from one entity to another.
+
+	example: an older sibling can "pass down" their old clothes to a younger sibling
+	exmaple2: DNA, you are passed your DNA from your parents
+
+	WHERE can we find this in code?
+		"extending" a class/interface/etc
+
+Encapsulation- The restriction of direct access.
+
+	example: vending machine, YOU dont' get the snickers, the machine does
+
+	WHERE can we find this in code?
+		public getters and setters, private fields
+
+
+
+
+
+
+
+
+
