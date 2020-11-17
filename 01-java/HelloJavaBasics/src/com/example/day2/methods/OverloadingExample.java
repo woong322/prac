@@ -13,7 +13,7 @@ package com.example.day2.methods;
  * 	-change the NUMBER of parameters
  * 	-change the ORDER of parameter datatypes
  * 
- * overloading is a type of polymorphism
+ * overloading is a type of polymorphism. More specifically it is compile time polymorphism
  */
 public class OverloadingExample {
 	public static void main(String[] argsaweuifhaufhsuifhauih) {
@@ -21,7 +21,7 @@ public class OverloadingExample {
 		//ourMethod('T');
 		ourMethod('c',6,23,6,234,5,2,2,5,6);
 		ourMethod('t', 234,277,3,25);
-		ourMethod(5);
+		ourMethod(7);
 	}
 	
 	static void ourMethod(char c, int k, int... i /* , int i2 */    /* , double... d */) {
