@@ -55,6 +55,8 @@ public class ArrayExample {
 		 * int is 0, double is 0.0D, float is 0.0F, short is 0, long is 0L, boolean is false,
 		 * byte is 0, char is "empty character", Objects of any type default to "null"
 		 */
+		System.out.println('A');
+		System.out.println((int)'a');
 		
 		
 		//System.out.println(arry4); //will print the memeory address
@@ -94,10 +96,10 @@ public class ArrayExample {
 		//				which index is the x axis? which is the y axis?
 		//				which index is the height? which is the depth?
 		//the best you can do is define a, say, column and row then be CONSISTENT
-		System.out.println(multiOne[2][0]); //will print 15
+		//System.out.println(multiOne[2][0]); //will print 15
 		
-		System.out.println("length: "+ multiTwo.length);
-		System.out.println("length: "+ multiTwo[0].length);
+		//System.out.println("length: "+ multiTwo.length);
+		//System.out.println("length: "+ multiTwo[0].length);
 		
 		//CAN WE HAVE MORE THAN TWO DIMENSIONS?
 		int[][][] array500 = new int[10][12][10];
