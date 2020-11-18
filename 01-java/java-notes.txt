@@ -83,6 +83,8 @@ Encapsulation- The restriction of direct access.
 		public getters and setters, private fields
 
 
+>>>>>>>WHAT is the heap?
+>the heap is the allowable memory space your operating gives you for your program's runtime.
 
 
 
