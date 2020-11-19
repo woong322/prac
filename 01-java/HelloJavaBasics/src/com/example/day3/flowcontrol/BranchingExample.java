@@ -20,7 +20,7 @@ public class BranchingExample {
 		if(bool) {
 			//System.out.println("in if block");
 		}else {
-			//System.out.println("in else block");
+			// System.out.println("in else block");
 		}
 		
 		//////////////

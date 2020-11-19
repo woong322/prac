@@ -71,6 +71,10 @@ public class ClassExample {
 		System.out.println("car's static member, when no car object has been created: "+ Car.myStaticVar);
 		System.out.println("num of animals: "+Animal.numOfAnimalsCreated);
 		
+		
+		////THIS  is how you'd access a subclass
+		//new Animal.InnerClass();
+		
 	}
 	
 	static void method1(Animal myObj) {
