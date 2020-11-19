@@ -21,7 +21,9 @@ public class OverloadingExample {
 		//ourMethod('T');
 		ourMethod('c',6,23,6,234,5,2,2,5,6);
 		ourMethod('t', 234,277,3,25);
-		ourMethod(7);
+		
+		OverloadingExample myOE = new OverloadingExample();
+		myOE.ourMethod(7);
 	}
 	
 	static void ourMethod(char c, int k, int... i /* , int i2 */    /* , double... d */) {
@@ -38,7 +40,7 @@ public class OverloadingExample {
 	}
 	
 	
-	static void ourMethod(int i) {
+	/* static */void ourMethod(int i) {
 		System.out.println("in first");
 	}
 	
