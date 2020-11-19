@@ -87,8 +87,79 @@ public /* static */ class Animal {
 	}
 	
 	
+	///////SCOPE
+	/*
+	 * What is scope?
+	 * 	The area where a variable exists. Outside of this area, the varis=able does not exist AT ALL.
+	 * 
+	 * This is NOT to be confused with access levels......that happen to determine who has access to a
+	 * 	a variable when it DOES exist. It deals with permissions, not existence.
+	 * 
+	 * What are the scopes in Java?
+	 * -static scope aka class scope
+	 * -instance scope aka object scope
+	 * -method scope
+	 * -block scope
+	 */
 	
+	static int myStaticScopeVar;
+	int myInstanceScopeVar;
 	
+	void myInstanceScopeMethodOne() {
+		int myMethodScopeVar=0;
+		
+		//note: if I DON'T initialize this method scoped variable, then when I attempt to use it
+		//		I will get a syntax error. So method scoped variables do NOT take their default values.
+		//So, to continue, we ARE able to use method scoped variables in the method scope.
+		System.out.println(myMethodScopeVar);
+		
+		System.out.println(myInstanceScopeVar); //you CAN access instance scope from method scope
+		System.out.println(myStaticScopeVar); //you CAN access static scope from method scope
+		
+		while(myMethodScopeVar==1) {
+			int myBlockScopeVar=0;
+			
+			//note: if I DON'T initialize this block scoped variable, then when I attempt to use it
+			//		I will get a syntax error. So block scoped variables do NOT take their default values.
+			//		(long story short, variables take their default values in 3 places: 
+			//															static scope, instance scope, and arrays)
+			//So, to continue, we ARE able to use block scoped variables in the block scope.
+			System.out.println(myBlockScopeVar);
+			
+			System.out.println(myMethodScopeVar); //you CAN access method scope from block scope
+			System.out.println(myInstanceScopeVar); //you CAN access instance scope from block scope
+			System.out.println(myStaticScopeVar); //you CAN access static scope from block scope
+		}
+		
+		//System.out.println(myBlockScopeVar); //you may NOT access block scoped variables from method scope
+		
+	}
+	
+	{
+		//a initializer block to test the instance scope
+		
+		//System.out.println(myBlockScopeVar); //you may NOT access block scoped variables from instance scope
+		//System.out.println(myMethodScopeVar); //you may NOT access method scoped variables from instance scope
+		System.out.println(myInstanceScopeVar); //you CAN access instance scope from instance scope
+		System.out.println(myStaticScopeVar); //you CAN access static scope from instance scope
+	}
+	
+	void myInstanceScopeMethodTwo() {
+		//System.out.println(myMethodScopeVar);
+			//No, you can NOT access another method scope's variables from your method scope.
+			// each "scope" is sorta personalized.
+			//you can use similar logic for two separate static scopes, two separate object scopes, and
+			//		two separate block scopes.
+	}
+	
+	static {
+		//a static block to test the static scope
+		
+		//System.out.println(myBlockScopeVar); //you may NOT access block scoped variables from static scope
+		//System.out.println(myMethodScopeVar); //you may NOT access method scoped variables from static scope
+		//System.out.println(myInstanceScopeVar); //you CAN access instance scope from static scope
+		System.out.println(myStaticScopeVar); //you CAN access static scope from static scope
+	}
 	
 	
 //	@Override

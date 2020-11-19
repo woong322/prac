@@ -87,6 +87,14 @@ Encapsulation- The restriction of direct access.
 >the heap is the allowable memory space your operating gives you for your program's runtime.
 
 
+>>>>>>what is the stack?
+>the stack is a structured memory space inside of the heap used to keep track of the program's order of operations, method calls, local variables, etc. (NOT objects and arrays)
+>a stack is last in first out (LIFO) aka first in last out (FILO)
+
+>>>>btw...what is the counterpart to a stack?
+>Queue
+>a queue is first in first out (FIFO)
+
 
 
 
