@@ -25,7 +25,7 @@ public class Animal {
 		System.out.println("static method from animal class");
 	}
 	
-	Animal(){
+	public Animal(){
 		super();
 		//System.out.println("in animal constructor");
 	}

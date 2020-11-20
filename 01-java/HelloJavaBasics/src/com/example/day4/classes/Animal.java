@@ -59,7 +59,7 @@ public /* static */ class Animal {
 //	}
 	
 	//constructors can NOT be static
-	/* static */ Animal(){
+	public /* static */ Animal(){
 		//this is called a "no arg constructor"
 		//System.out.println("inside Animal's constructor");
 		//numOfAnimalsCreated++;
