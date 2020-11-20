@@ -27,6 +27,6 @@ public class Animal {
 	
 	Animal(){
 		super();
-		System.out.println("in animal constructor");
+		//System.out.println("in animal constructor");
 	}
 }

@@ -36,8 +36,14 @@ public class InheritExample {
 		//turt.
 		
 		
-		
-		
+		//let's double back and look over "super" and "this"
+		//state
+//		System.out.println(chi.numOfHands);
+//		System.out.println(((Monkey)chi).numOfHands);
+//		chi.printParentState();
+		//behavior
+		chi.makeNoise();
+		//((Animal)chi).makeNoise();
 		
 		
 		/*

@@ -9,7 +9,7 @@ public class Monkey extends Animal{
 				//UNLESS you manually call a different constructor
 				//the "super" keyword in this context calls your PARENT'S constructors
 		this(17); //the "this" keyword in this context calls YOUR other constructors
-		System.out.println("in monkey constructor");
+		//System.out.println("in monkey constructor");
 		
 		//super
 	}
@@ -18,6 +18,6 @@ public class Monkey extends Animal{
 		//super();
 		//this();
 		speed= startingSpeed;
-		System.out.println("in monkey SECOND constructor");
+		//System.out.println("in monkey SECOND constructor");
 	}
 }

@@ -63,6 +63,7 @@ public /* static */ class Animal {
 		//this is called a "no arg constructor"
 		//System.out.println("inside Animal's constructor");
 		//numOfAnimalsCreated++;
+		
 	}
 	
 	Animal(int i){
