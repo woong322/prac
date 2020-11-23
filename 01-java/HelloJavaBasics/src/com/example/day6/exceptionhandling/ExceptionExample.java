@@ -28,6 +28,7 @@ public class ExceptionExample {
 			/*
 			 * the ORDER of the catch blocks matter, don't have a more broad catch block higher
 			 * up in the order. Because you'll create an "unreachable code" scenario
+			 * (so children classes are higher in order than their parents)
 			 */
 		}catch(Exception e) {
 			//the catch block is a type of flow control, it's essentially branching logic
