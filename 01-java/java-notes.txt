@@ -119,9 +119,9 @@ What is an error?
 
 What is the hirarchy of exception handling in Java?
 
-			(	Throwable, class	)
+			(	Throwable, class, checked	)
 				/		\
-	(Exception, class, checked)		(Error, class)
+	(Exception, class, checked)		(Error, class, unchecked)
 		|
 	(RuntimeException, class, unchecked)
 
@@ -133,6 +133,7 @@ keywords associated with exceptionhandling in java?
 
 How do we "handle" an exception/error?
 	We use a try/catch block
+	(ALSO we can duck exceptions using the "throws" keyword
 
 What is "checked"?
 	The compiler will give you a syntax error if you do NOT "handle" the logic that could
@@ -146,6 +147,7 @@ What is "unchecked"?
 		the developer have made a mistake.
 
 
+"Segmentation Fault"
 
 
 
