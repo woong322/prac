@@ -14,13 +14,13 @@ package com.example.day2.primitives;
  * 
  * 	methods-
  * 		camelcase		e.g. fallDown, flyAway, etc
- * 
+ * 						verb
  * 	class-
  * 		titlecase		e.g. SilverWare, CollegeStudent, etc
- * 
+ * 						nouns
  * 	interfaces-
  * 		titlecase		e.g.	Edible, Moveable, etc
- * 
+ * 						adjectives
  * 	packages-
  * 		lowercase		e.g.	characters, movieclips, etc
  * 
