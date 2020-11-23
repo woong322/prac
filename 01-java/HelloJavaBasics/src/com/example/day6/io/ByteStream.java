@@ -9,11 +9,11 @@ import java.io.InputStream;
 public class ByteStream {
 
 	public static void main(String[] args) {
-		String filename= "./src/com/example/day10/io/ByteFile.txt";
+		String filepath= "./src/com/example/day6/io/ByteFile.txt";
 		
-		//writeByteStream(filename);
-		readByteStream(filename);
-		//readThisClassFile();
+		//writeByteStream(filepath);
+		//readByteStream(filepath);
+		readThisClassFile();
 		
 	}
 
@@ -66,7 +66,7 @@ public class ByteStream {
 	}
 	
 	static void readThisClassFile() {
-		String filename = "./bin/com/example/day10/io/ByteStream.class";
+		String filename = "./bin/com/example/day6/io/ByteStream.class";
 		try(InputStream inputs= new FileInputStream(filename)){
 			byte[] first4 = new byte[4];
 			inputs.read(first4);
