@@ -1,11 +1,12 @@
-# 2011-nov16-javascript
+# Welcome to our gitlab repository
 
-look at all these cool changes, sugoi!
+## Below are some resources that may help you along in the training
 
-Changes from my local machine!!!!
-The objective best anime of all time is.....Yu Yu Hakusho
-            Next up is .... One Piece
-The objective best pokemon of all time is....Starmie
-		Second up it Lapras
-Changes from my remote machine (simulating a coworker)!!!!
-Bob loblaw
+* The code examples we do in training are available to you in this repository
+
+* There are markdown files in this gitlab. If you look inside the "00-additional-study-materials" folder then you'll see a few topic folders, in those topic folders you'll see markdown files (with the extension .md). If you click on these files from the broswer then you'll be able to view some nicely formatted notes.
+
+* I'll also provide even MORE resources here: [Powerpoint files & Interview Prep Located here](https://drive.google.com/drive/folders/1PHo77l74cEZMV0tUWJsNMD7tznzDhKPj?usp=sharing)
+
+
+
