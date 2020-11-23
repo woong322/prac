@@ -10,14 +10,17 @@ import java.io.ObjectOutputStream;
 public class SerializationExample {
 
 	public static void main(String[] args) {
+		String filepath = "./sampleObjectFile.txt";
+		Person person = new Person("Zach", 32, "555-55-5555");
 		
-
+		//writeObject(filepath, person);
+		System.out.println(readObject(filepath));
 	}
 	
 	static Object readObject(String filename) {
 		Object obj=null;
 		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
-			obj = ois.readObject(); //de-serialization
+			obj = ois.readObject(); //de-serialization (1 object per file)
 			//System.out.println(obj);
 			return obj;
 
@@ -27,12 +30,6 @@ public class SerializationExample {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}finally{
-			//this will still fire in the case of a return triggering in the try block
-			System.out.println(obj);
-			System.out.println("in finally");
-			((Person)obj).setName("Changed");
-			obj=null;
 		}
 		return null;
 	}
