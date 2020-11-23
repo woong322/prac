@@ -97,6 +97,55 @@ Encapsulation- The restriction of direct access.
 
 
 
+---------------------------
+>>>>>>>>>>>..EXCEPTION HANDLING IN JAVA
+What is an exception?
+	An exceptional event (aka issue) that arises in your program's logic. More than likely
+	the programmer's logic is faulty or dangerous or careless.
+
+	examples:
+		ArrayIndexOutOfBoundsException
+		ArithmeticException
+		FileNotFoundException
+
+What is an error?
+	An exceptional event (aka issue) that arises OUTSIDE of your program's logic. More than
+	likely the issue is with your runtime environment or system.
+
+	examples:
+		StackOverflowError
+		OutOfMemoryError
+
+
+What is the hirarchy of exception handling in Java?
+
+			(	Throwable, class	)
+				/		\
+	(Exception, class, checked)		(Error, class)
+		|
+	(RuntimeException, class, unchecked)
+
+
+keywords associated with exceptionhandling in java?
+-try, catch, finally
+-throw
+-throws
+
+How do we "handle" an exception/error?
+	We use a try/catch block
+
+What is "checked"?
+	The compiler will give you a syntax error if you do NOT "handle" the logic that could
+	potentially thorw an exception/error. In short, when you do NOT handle an exception
+	it will lead to a syntax error, the syntax error itself is NOT the exception being thrown.
+
+What is "unchecked"?
+	The compiler will NOT force you to "handle" logic that could potentially throw an
+	exception/error. meaning there will be no syntax error created.
+	Note: if you EVER see an unchecked YOU need to refactor your code, because you as
+		the developer have made a mistake.
+
+
 
 
 
