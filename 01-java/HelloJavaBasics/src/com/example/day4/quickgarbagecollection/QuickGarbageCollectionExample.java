@@ -26,6 +26,14 @@ public class QuickGarbageCollectionExample {
 		//ACTUALLY System.gc() will SUGGEST to the garbage collector to come get your garbage...it doesn't FORCE
 		//		it to
 		System.gc();
+		
+		
+		/*								throw & throws
+		 * 								Collection & Collections
+		 * What is the difference between final, finally, and finalize?
+		 * 
+		 * Finalize() is a method invoked just before the garbage collector deletes an object
+		 */
 	}
 
 }

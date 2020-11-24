@@ -147,7 +147,27 @@ What is "unchecked"?
 		the developer have made a mistake.
 
 
-"Segmentation Fault"
+
+----------------------
+>>>>>>What is a Collection? Or the Collection API in java?
+>A collection is a data structure that contains objects. Aka an object that contains other objects.
+>There are MANY types of data structures in computer science.
+>The Collection API in java has already created a variety of datastructures for you to use; that is to say, you don't have to create them from scratch. So you don't have to waste company time creating the SAME datastructures for EVERY new application you make.
+>Lastly, the built datastructures are EXTREMELY optimized.
+
+>>>>>What is a List?
+>A List is an indexable group of data entries, duplicates are allowed
+
+>>>>What is a Set?
+>A Set is a group of non-indexable data entries, NO DUPLICATES ARE ALLOWED
+
+>>>>What is a Queue?
+>A Queue is a group of data entries that has an order to them, and is designed remove elements in a specific way: first in first out (FIFO).
+
+
+>>>>>What is a Map?
+>A Map is a key-value pair. It holds a group of data entries, but each data entries (value) can only be retrieved if you have a "key" to reference it
+
 
 
 
