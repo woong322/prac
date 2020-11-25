@@ -104,6 +104,15 @@ public class PrimExample {
 		
 		int iFour = 232_423_246;
 		System.out.println(iFour);
+		
+		
+		
+		////BONUS topic:
+		
+		//what is wrong with this?
+		//5;
+		System.out.println( 5);
+		int myTempVar = 5;
 	}
 	
 	
