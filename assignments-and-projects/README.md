@@ -20,8 +20,8 @@
 
 ### Training Week 3 (11/23)
 * Java Assignment:
-    * due 11/30/2020
+    * due 11/30/2020 end of day
 * Project 0, Part 1:
-    * due 11/30/2020
+    * due 11/30/2020 end of day
 
 ("start of day" is 10am EST. "end of day" is at 11:59pm EST. "end of work day" is 6pm EST.)
