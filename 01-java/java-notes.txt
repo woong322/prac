@@ -169,5 +169,42 @@ What is "unchecked"?
 >A Map is a key-value pair. It holds a group of data entries, but each data entries (value) can only be retrieved if you have a "key" to reference it
 
 
+>>>>>>>>>>>>>>>>>Threads>>>>>>>>>>>>
+>>>What is a thread?
+>A process. A line of logic. (aka a series of instructions)
+
+>>>What is a subprocess?
+>A child process that occupies the same heap as the parent process.
+>In java, all threads are ACTUALLY subprocesses
+	>>This means that threads in Java have the same heap, but different stacks
+	
+>>>What is multithreading?
+>Is when multiple processes run concurrently (at the same time)
+
+
+>>>In Java, what are the states of a thread?
+-New	-	the thread is new (just created)
+-Runnable-	it's able to have processor time (not sure if CURRENTLY running)
+-Waiting-	pauses functionality until a specific event has happened
+-Timed Waiting-	pauses functionality until a certain time has passed
+-Blocked-	it can't continue its process because another
+			process has hogged/claimed a resource
+-Terminated-	finished
+
+
+>>>>What does the synchronized keyword do in Java?
+>The synchronized keyword goes on methods
+>For a synchronized method two threads can NOT access the method
+	concurrently. THAT specific method inside of THAT specific object.
+	>that is to say, that if method1() is synchronized then ThreadOne and
+		ThreadTwo cannot access method1() inside of ObjectOne AT THE SAME TIME. BUT ThreadOne can access method1() inside of ObjectOne AT The
+		SAME TIME AS ThreadTwo accessing method1() inside of ObjectTwo.
+
+
+
+
+
+
+
 
 
