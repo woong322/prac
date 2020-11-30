@@ -186,9 +186,11 @@ What is "unchecked"?
 -New	-	the thread is new (just created)
 -Runnable-	it's able to have processor time (not sure if CURRENTLY running)
 -Waiting-	pauses functionality until a specific event has happened
+			(waiting for a "resume" signal)
 -Timed Waiting-	pauses functionality until a certain time has passed
+			(waiting for a time signal)
 -Blocked-	it can't continue its process because another
-			process has hogged/claimed a resource
+			process has hogged/claimed a resource (synchronized methods)
 -Terminated-	finished
 
 
