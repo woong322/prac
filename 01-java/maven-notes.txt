@@ -1,0 +1,36 @@
+(common language independent data formats: XML and JSON)
+--------------------------------
+xml is a language independent data format
+what this means is...that XML is used to transfer data between different programmming languages (or applications)
+
+>>>>vocab
+>an xml tag is a "keyword" surrounded by diamond brackets
+	>>there are opening tags and closing tags
+>an xml element is the opening tag and closing tag AS WELL AS all its contents
+>you can use xml attributes to give metadata to elements
+
+
+>>>>>>demo of xml
+>>>>>(let's say we have an object1 with state [color weight] and 
+>>>>>object2 with state [backgroundColor taste])
+
+<xml>  		 <----(this is the root tag)
+
+	<object1 attr1="attributesAreAWay" attr2="toGiveMetaDataToElements">
+		<color>blue</color>
+		<weight>144</weight>
+	</object1>
+	<object2>
+		<backgroundColor>purple</backgroundColor>
+		<taste>sweet</taste>
+	</object2>
+
+</xml>
+
+(keep in mind, the xml structure is going to be sent from one application to another as a String.
+the "parser" will read and interpret the string)
+
+[Object1, Object2]
+Object1=
+	obj1.color=blue
+	obj1.weight=144  
