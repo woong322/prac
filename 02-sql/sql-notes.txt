@@ -52,5 +52,71 @@ Types of SQL languages:
 -Oracle SQL (aka PL/SQL)
 -etc
 
+>>>>>What....are the sublanguages of core SQL?
+>DML-Data Manipulation Language
+	>DML operates on records/data
+	>These are CRUD methods: Create, Read, Update, Delete
+	>keywords: INSERT, SELECT, UPDATE, DELETE
+
+>DDL-Data Definition Language
+	>DDL operates on the schema
+	>The "schema" refers to the DB's structure (aka its containers, like tables, views, etc)
+	>keywords: CREATE, ALTER, TRUNCATE, DROP
+		     (c)    (u)              (d)
+>DQL-Data Query Language
+	>Some DBs consider Select as its own sublanguage
+	>keywords: SELECT
+	>example query:
+		SELECT column1 FROM tableA WHERE attr1=value
+
+>DCL-Data Control Language
+	>DCL controls WHO HAS ACCESS to the data
+	>keywords: GRANT, REVOKE
+
+>TCL-Transaction Control Language
+	>TCL deals with creating "transaction" and persisting data
+	>keywords: COMMIT, ROLLBACK, SAVEPOINT
+
+
+>>>>What is a transaction?
+>it's a commit; a change to the state of the database (or group of changes)
+>example:
+	insert (2records), delete (4 records), update (1record), commit
+
+	how many transactions have occured?
+	>1 transaction has occurred
+
+>but what is rollback and savepoint?
+>>example:
+	
+	originalState|----changes--------commit-----changes2-----rollback
+
+	>the answer is: the rollback will delete changes back to the most RECENT commit
+	    >originalState|----changes--------commit
+	
+
+	originalState|----changes-----savepoint mysave----changes2-------rollback mysave
+
+
+	originalState|----changes-----savepoint mysave----changes2---commit----rollback mysave
+	>>this won't work
+
+
+What are the properties of a transaction?
+>The ACID properties
+>Atomicity
+	>>"all or nothing"; no partial transactions
+>Consistency
+	>>after a transaction the state of your schema is intact
+	>>also, the database should LOGICALLY be consistent
+>Isolation
+	>>transactions cannot interfere with one another
+>Durability
+	>>changes you make to the state of the DB persist through issues/errors
+
+
+
+
+
 
 
