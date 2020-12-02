@@ -77,6 +77,12 @@ INSERT INTO pokemon values(149, 'dragonite', 'dragon', 'flying');
 UPDATE pokemon SET pokemon_secondtype='poison';
 UPDATE pokemon SET pokemon_secondtype='poison' WHERE pokemon_id =1;
 
+--DML: DELETE
+DELETE FROM pokemon;
+DELETE FROM pokemon WHERE pokemon_id = 150;
+
+SELECT * FROM pokemon;
+
 COMMIT;
 ROLLBACK;
 
