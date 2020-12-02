@@ -1,0 +1,56 @@
+>>>>>>What is data?
+>information
+
+
+>>>>>What is a database (DB)?
+>a place to store information
+>a structured and organized set of data
+>Databases (DB) support manipulation and storage of data etnries; DB make management of data significantly easier.
+
+>>>>>>How is data structured in DBs?
+>IN TABLES!!!!!!!!!!!!!!
+>A table represents a type of "entity" we want to store (not a specific record)
+	>>things like: users, cars, pokemon, etc
+>A table has rows and columns
+	>>>columns	= attributes AKA fields AKA properties
+	>>>rows		= data entries AKA records
+>EACH record in that table has an OFFICIAL unique identifier refferred to as a "primary key"
+
+
+	|			Animal Table		       |
+	________________________________________________________
+	|AnimalPK | AnimalName |  AnimalSpecies | AnimalWeight |
+	--------------------------------------------------------
+	|  25        Max             Doggo             50      |
+	|  37        Lucky           Horse             500     |
+        |  112       Jack	     Spider            0.25    |
+	|  400       Lucky           Horse             500     |
+	________________________________________________________
+
+
+>>>>>>>What is a DataBase Management System (DBMS)?
+>The set of softwares which enable access to a database, allows manipulation of data, and reporting of data.
+>It also processes queries
+>There are a few types of DBMS:
+	>>Relational	<-----WE'LL BE USING RELATIONAL
+	>>Object Oriented
+	>>Navigational
+	>>etc
+
+
+
+>>>>>>>>>>>What is SQL?
+>Structured Query Language
+>It's a syntax used to communicate with the database (DBMS)
+
+Types of SQL languages:
+-TransactSQL
+-SQLServer
+-SQLLite
+-MySQL
+-PostgreSQL
+-Oracle SQL (aka PL/SQL)
+-etc
+
+
+
