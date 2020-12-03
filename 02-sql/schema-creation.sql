@@ -72,6 +72,9 @@ INSERT INTO pokemon values(25, 'pikachu', 'eletric', null);
 INSERT INTO pokemon values(121, 'starmie', 'water', 'psychic');
 INSERT INTO pokemon values(150, 'mewtwo', 'psychic', null);
 INSERT INTO pokemon values(149, 'dragonite', 'dragon', 'flying');
+INSERT INTO pokemon(pokemon_name, pokemon_id,pokemon_type) VALUES('charmander', 4, 'fire');
+
+INSERT INTO pokemon values(null, 'missingno', 'normal', null);
 
 --DML: UPDATE
 UPDATE pokemon SET pokemon_secondtype='poison';
