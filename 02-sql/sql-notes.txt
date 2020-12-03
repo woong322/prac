@@ -118,6 +118,79 @@ What are the properties of a transaction?
 
 
 
+>>>>>>>>>>>>>>>>>>>>>MORE ON PRIMARY KEYS
+>What is a primary key?
+---the official unique identifier for the record
+
+>>>Types of PKs:
+>Natural Key:
+	>it's a key that was obtained from outside of the database and is already unique
+	>examples: emailaddress, SSN, VIN, licenseplate, etc
+	>issues?
+		>>>what happens if we can't guarantee the key's uniqueness
+			(in real life mistakes have been made)
+		>>>what happens if the natural key is changed in the outside world
+			(people can apply to change their SSN)
+		>>>what happens if the natural key is sensitive information? like a SSN
+
+>Surrogate Key:
+	>it's a key that was created inside this dataabase and to be used inside this database
+	>issues?
+		>>>takes up mre space than necessary if you COULD have been using the natural key
+
+>Composite Key:
+	>two ore more fields/column that create a unique value and acts as the PK
+	>example:
+		song title: "love song"
+		artist: "Trevin and the wailers"
+		compositive key: ("Trevin and the wailers", "love song remix feat Nasim")
+
+
+
+
+>>>>>REFERNTIAL INTEGRITY>>>>>>>>>>>>>>>>
+>What is referential integrity?
+	>the enforcement of foreign keys referencing valid and existing primary keys
+	>essentially, referential integrity protects us from having orphan
+
+>What is an orphan record?
+	>because a FK reference a PK, the FK is DEPENDENT upon the PK of the other record....
+		>>mean the PK record is a parent record to the FK record (aka the child record)
+	>SO....if you delete the Parent record then the child record (FK) will no longer have
+		a parent, it will be an orphan record. REFERENTIAL INTEGRITY protects us from
+		accidentally creating orphans records. If you attempt a transaction that will
+		create an orphan record then it will throw an error.
+	>To delete the parent record, you must first delete the children records
+		(also, you can look into "cascade on delete" OR
+		you could set the child's FK to null temporarily)
+
+
+>>>>>>>>>>>>>MULTIPLICITY>>>>>>>>>>>>
+>What is multiplicity?
+>>>multiplicity describes the relationship between tables/entities
+
+>MANY-TO-MANY
+	>classes to student
+	>fridges to healthinspectors (project 0 reference)
+
+>ONE-TO-MANY
+	>revatureTrainer to associates
+	>school to students
+
+>MANY-TO-ONE
+	>associates to revatureTrainer
+	>students to school
+
+>ONE-TO-ONE
+	>mandalorian to babyYoda
+	>student to studentID
+	>SSN to person
+	(one-to-one is a deprecated multiplicity, there isn't a common scenario where you'd 		normally use this)
+
+LET'S SEE HOW TO IMPLEMENT MULTIPLICITY IN A DATABASE!!!
+
+
+
 
 
 
