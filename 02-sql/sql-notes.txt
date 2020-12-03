@@ -191,6 +191,207 @@ LET'S SEE HOW TO IMPLEMENT MULTIPLICITY IN A DATABASE!!!
 
 
 
+>>>>>>>>>>>>>>JOINS>>>>>>>>>>>>>>>>>>>>>>>
+>What is a join?
+>>>its a way to combine tables into a single result set based on some attribute (like a FK)
+
+>how does a join's result look?
+
+	| A		|		|	B		|
+	| attr1   attr2 |		|  attr3   attr4  attr5 |
+
+
+
+	|		A join B		|
+	| attr 1  attr2   attr3   attr4   attr5 |
+
+
+
+>>>Types of joins?
+
+Inner Join
+Outer Join
+	>Left
+	>Right
+	>Full
+Self Join
+	(when a table joins with itself)
+	(example: employee joins employee      ON EPK=reports_to)
+	(example: person join person            ON PPK=spouse_id)
+Cross Join
+	(table 100 records cross join table 100,000....result set? 10 million)
+	(example: shirt sizes table  cross join  shirt graphics table)
+Cartesian Join
+	(aka Cross Join)
+Theta Join
+	(thetas joins are when we use inequalities like >, <, etc)
+	(example: empkoyee joins otherTable  ON EPK > reports_to)
+Equi Join
+	(equijoins are when we use equalities "=")
+	(example: employee joins otherTable  ON EPK=reports_to)
+Natural Join
+N-Way Join
+etc
+
+
+
+
+
+-----------This part is not on the curriculum BUT it is still fair game for QC and interviews-------
+
+
+>>>>>>>>>>SET OPERATORS>>>>>>>>>>>>>>>
+>set operators combine results sets into a single NEW result set
+
+>Union
+	>takes all the data entries in both result sets and puts them into a NEW result set
+		no duplicates
+
+>Union All
+	>takes all the data entries in both result sets and puts them into a NEW result set
+		yes, duplicates
+
+>Intersect
+	>takes all the data entries that happen to appear in BOTH result sets and puts them
+		into a NEW result set
+
+>Minus
+	>takes all the data entries from the left result set and substracts any data entries
+		that happen to appear in the right table
+
+
+>EXAMPLE SYNTAX
+	SELECT * FROM tableA WHERE attr1='stuff' AND attr3=10;
+	UNION ALL
+	SELECT * FROM tableB WHERE attr2=5;
+
+(requirements for set operators: each result set must have the same number of columns
+	AND each column must have the same datatypes. The names of the columns don't matter, they
+	don't have to match)
+
+
+		(employee)			(manager)
+		|	A	|		|    B          |
+		|attr1    attr2 |		|  attr3  attr 4|
+		| 0       Island|		|   0     Island|
+		| 1       Forest|		|   2     Plains|
+		| 3       Swamp |
+
+
+What does MINUS look like?
+		|A MINUS  B  |
+		|attr1  attr2|
+		| 1    Forest|
+		| 3     Swamp|
+
+		|B MINUS  A  |
+		|attr3  attr4|
+		| 2    Plains|
+
+What does INTERSECT look like?
+		|A INTERSECT B|
+		|attr1  attr2|
+		| 0    Island|
+
+What does UNION ALL look like?
+		|A UNIONALL B|
+		|attr1  attr2|
+		| 0    Island|
+		| 0    Island|
+		| 1    Forest|
+		| 2    Plains|
+		| 3     Swamp|
+
+
+What does UNION look like?
+		|A UNION  B  |
+		|attr1  attr2|
+		| 0    Island|
+		| 1    Forest|
+		| 2    Plains|
+		| 3     Swamp|
+
+
+
+----------------------TANGENT THAT MAY HELP WITH PROJECT 0 & 1------------------
+>>>What is an ENUM? (enumeration)
+>an entity that appears in programming, that can restrict the value a variable can have
+
+
+>>let's look at some code WITHOUT enums:
+
+int myState = ....system entered data.......
+
+if(myState ==0){
+	//logic for OFF
+}else if(myState == 1){
+	//logic for IDLE
+}else if(myState == 2){
+	//logic for ACCELERATING
+}else if(myState == 3){
+	//logic for COASTING
+}else if(myState == 4){
+	//logic for STOPPING
+}
+
+
+>>let's look at some code WITH enums:
+
+public enum CarState{ OFF=0, IDLE=1, ACCELERATION=2, COASTING=3, STOPPING=4 }
+
+CarState myState = ....system entered data.......
+if(myState == CarState.OFF){
+	//logic for OFF
+}else if(myState == CarState.IDLE){
+	//logic for IDLE
+}else if(myState == CarState.ACCELERATION){
+	//logic for ACCELERATING
+}else if(myState == CarState.COASTING){
+	//logic for COASTING
+}else if(myState == CarState.STOPPING){
+	//logic for STOPPING
+}
+
+
+
+>>>>IN SQL we don't have enums readily available ...we use LOOKUP TABLES to acheive this restriction
+>>>>  of values for a field/attribute
+
+
+|    Users Table   	|
+| UserID  Name   RoleFK |
+|   0    Zach	  0	|
+|  1     Jacob    1	|
+
+
+| Role Table		|		<-------this table would be used as a lookup table
+| RoleID      Name	|
+|  0          Admin	|
+|  1	    Employee	|
+|  2       Customer	|
+
+
+| Status Table		|	<-----again, we have another lookup table
+| StatusID	Name	|
+|   0	      Pending	|
+|   1	     Approved	|
+|   2	     Denied	|
+
+
+*lookup tables help restrict range of values
+*also, they help modularize your data entries to prevent update anomalies
+*also, makes it easier to update statuses
+-------------------------------------
+
+|    Users Table   	| <----imagine not using a lookup table for a second
+| UserID  Name   RoleName(varchar)|
+|   0    Zach	  admin		|
+|  1     Jacob    supersaiyan	|
+
+
+
+
+
 
 
 
