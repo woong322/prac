@@ -113,4 +113,25 @@ ON C.spower_id = B.my_spower_id;
 SELECT * FROM get_rid_of_annoyance_view;
 
 
+/*
+ * What is a Materialized View?
+ *    It's a view that DOES store data.
+ * 
+ * Normally with a view the data is updated EVERYTIME you select the view. With a materialized view
+ * the data is store so you could possibly be getting outdated data. Materialized views are updated
+ * periodically. They are used to speed up computations in SQL, because views need to recompiled while
+ * materialized views do not.
+ * 
+ * view syntax:
+ *      CREATE VIEW get_rid_of_annoyance_view AS
+ * 
+ * materialized view syntax:
+ * 		CREATE MATERIALIZED VIEW get_rid_of_annoyance_view AS
+ * 
+ * 
+ * to refresh materialized views syntax:
+ * 		REFRESH MATERIALIZED VIEW get_rid_of_annoyance_view;
+*/
+
+
 

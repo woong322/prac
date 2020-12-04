@@ -233,6 +233,53 @@ Natural Join
 N-Way Join
 etc
 
+>>>>>>>>>>Let's look at this random table for a bit
+
+
+
+
+|			Office Table								|
+_________________________________________________________________________________________________
+|EmployeePK    EmpName           OfficeLocation    Office#    Cust1      Cust2    Cust3		|
+-------------------------------------------------------------------------------------------------
+|    0       Diego A		   Narnia	 555-555-5555  Justin W    ---       ----
+|    5  Cody "The Finger" Moody   Azkaban	  313-8870    Hulk Hogan  "Moose"    -----
+|   10        Albert		   Narnia        555-555-5555  Freiza     Cooler  Dora "Da Explora"
+
+
+
+>>>>>>>>>>>NORMALIZATION
+>>>What is normalization?
+>>>>>>Normalization is the process of organizing your DB schema to reduce data redundancy and DB
+	inconsistencies.
+
+>>>What is a normal form (NF)?
+>>>>>>it's a single rule/step taken to further normalize your DB
+
+>>>1st Normal Form (1st NF)
+-Each record must have a PK
+-Attributes should be atomic/granular
+   ---no "name" column, you'd do "firstname" and "lastname" column
+-Attributes should be singular
+   ---no "cust1" "cust2" and "cust3"...they should be in their own table
+
+>>>2nd Normal Form (2nd NF)
+-Must be in 1st NF
+-All attribute MUST be dependant on the PK
+   ---to put it another way, attributes in the table should be properties of THIS record
+-No partial dependencies
+   ---this deals with composite keys
+   ---example: (Author, BookTitle)     "Author Age"
+
+>>>3rd Normal Form (3rd NF)
+-Must be in 2nd NF
+-No transitive dependencies
+   ---in mathematics:   if A=B and B=C then A=C
+   ---example:
+	|			Competition				 |
+	|CompPK    CompYear    CompWinner     CompWinnerDoB    CompLength|
+	| 0          1985       Julius          March 12 '70    15mins   |
+   ----The key. The whole key. And nothing but the key, so help me Codd.
 
 
 
