@@ -1,0 +1,26 @@
+>>>>What is JDBC?
+>Java DataBase Connectivity
+>JDBC is a technology taht allows java to connect to a database
+	>>JDBC is modular. It doesn't connect to any specific DB, it can connec to
+		ANY DB as long as it has the driver.
+
+>>>What is needed to connect to any database?
+>URL = (endpoint + databasename + port)
+>username
+>password
+>driver
+
+>>>>>What are the important classes and interfaces in JDBC?
+
+                                creates			      creates
+	(DriverManager, class)  ------->(Connection, interface)---->(Statement, interface)
+	/	|	      \					  /			|
+    postgres    oracle	     mySQL				/			|
+    driver	driver	     driver			       /			|
+							     /				|
+							   /				|
+				(PreparedStatement, interface) 	     (CallableStatement, interface)
+
+
+
+one last entity by its lonesome: 	(ResultSet, interface)
