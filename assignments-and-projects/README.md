@@ -1,5 +1,5 @@
 # Due Dates
-
+("start of day" is 10am EST. "end of day" is at 11:59pm EST. "end of work day" is 6pm EST.)
 
 ### Training Week 2 (11/23)
 * HackerRank Problems
@@ -18,10 +18,18 @@
         * (a medium problem of YOUR choice)
     * [hackerrank website](https://www.hackerrank.com/) 
 
-### Training Week 3 (11/23)
+### Training Week 3 (11/30)
 * Java Assignment:
     * due 11/30/2020 end of day
 * Project 0, Part 1:
     * due 11/30/2020 end of day
+* Enthuware Test 1:
+	* due 12/04/2020 end of day
+	
+### Training Week 4 (12/07)
+* Project 0, Part 2:
+    * due 12/09/2020 start of day
+* SQL Assignment:
+    * due 12/09/2020 end of day
 
-("start of day" is 10am EST. "end of day" is at 11:59pm EST. "end of work day" is 6pm EST.)
+
