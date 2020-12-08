@@ -29,10 +29,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HELLO HTML!!!</title>
+    <style>
+        /* We're able to cascade our styles down the page by putting them
+        in a style tag in the head tag. We have achieved CS (cascading style) */
+        /* p{
+            color: purple;
+            text-align: right;
+        }
+        h3{
+            color:saddlebrown;
+        } */
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="./css-demo.css">
 </head>
 <body>
+
+    <!-- What is a DIV tag? A container for elements, in other words a block
+    of elements (like curly braces for HTML pages)
+        What is SPAN tag? An inline container, similar to div BUT for smaller contents
+-->
+    <!-- <div style="color:blue"> -->
+    <div>
+
+        <p style="color: green; text-align: center;">My Paragraph</p>
+        <p >Some <i>other</i> paragraph...</p>
+        <p class="wedabess">Nani!?!?!</p>
+        <p id="anotha1" style= "color: rgb(0,128,0);">Sugoi!</p>
+    </div>
+    <div>
+
+        <p class="wedabess">Sure, <b>there</b> are double <span>stuffed oreos...but</span> what is the stuffing?</p>
+        <p class="wedabess">Stuffed monkey next to me</p>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- This is a comment -->
+
     Our First HTML page!!!!!!!
 
+    <!-- these are headers -->
     <h1>This is a header one</h1>
+    <h2 class="stuff">This is a header two</h2>
+    <h3>This is a header three</h3>
+    <div><h4>This is a header four</h4></div>
+    <h5 class="wedabess">This is a header five</h5>
+    <h6>This is a header six</h6>
+
+    <!-- this is a paragraph tag -->
+    <p>Pie jelly gummi bears candy. Tootsie roll sesame snaps jelly. Topping icing biscuit marzipan sugar plum marzipan oat cake jujubes. Cookie candy croissant fruitcake soufflé cheesecake dragée powder. Biscuit carrot cake dessert pie fruitcake wafer donut gummies halvah. Dessert powder pudding muffin marzipan cake icing sweet roll. Jujubes gingerbread jelly. Pie halvah caramels sesame snaps gummi bears gummies. Gummi bears brownie macaroon dragée sweet roll. Pudding cookie jujubes sweet roll. Candy canes carrot cake tart apple pie candy canes pastry cheesecake chocolate. Muffin apple pie pastry jelly bear claw muffin.</p>
+
+    <!-- a break is essentially a new line character in HTML -->
+    <br/><br/><br/>
+
+    <!-- anchor tag: hyperlinks  -->
+    <a href="http://www.cupcakeipsum.com/">Cupcake Ipsum</a>
+
+    <!-- table -->
+    <table border="2">
+        <tr> <!-- table row -->
+            <th>Star Wars</th> <!-- table header -->
+            <th>Star Trek</th>
+        </tr>
+        <tr>
+            <td>Row1, Column1</td> <!-- table data -->
+            <td>Row1, Column2</td>
+        </tr>
+        <tr>
+            <td>Row2, Column1</td>
+            <td>Row2, Column2</td>
+        </tr>
+
+    </table>
+
+    <!-- lists -->
+    <ul> <!-- unordered list -->
+        <li>Marvel Comics</li>
+        <li>DC Comics</li>
+    </ul>
+
+    <ol> <!-- ordered list -->
+        <h3>Best Superheroes of all time:</h3>
+        <li>Spider-man</li>
+        <li>Static Shock</li>
+        <li>Storm</li>
+        <li>Squirrel Girl</li>
+        <li>Shaggy from Scooby Doo</li>
+    </ol>
+
+    <br><br><br>
+
+    <!-- creating a form -->
+    <form>
+
+        <h4>This is our form</h4>
+        <input type="text" name="heroname" placeholder="this is our hero name"/> <br>
+        <input type="number" name="numba" value="5"/><br>
+        <input type="password" name="pass" placeholder="super secret password"/><br>
+
+        
+        <!-- FIRST set of radio buttons -->
+        <input type="radio" name="cereal" value="milk first"/>
+        Milk first, then cereal? Why tho!?
+        <input type="radio" name="cereal" value="cereal first"/>
+        Cereal first, then milk....nice..nice
+        
+        <br><br>
+        
+        <!-- SECOND set of radio buttons -->
+        <input type="radio" name="cerealTWO" value="milk first"/>
+        Milk first, then cereal? Why tho!?
+        <input type="radio" name="cerealTWO" value="cereal first"/>
+        Cereal first, then milk....nice..nice
+        
+        <!-- checkboxes -->
+        I have a pen~:<input name="check1" type="checkbox" value="pen">
+        I have a apple~:<input type="checkbox" name="check2" value="apple">
+        Apple-pen~:<input type="checkbox" name="check3" value="apple-pen">
+        
+        <br><br>
+
+        <!-- submit button -->
+        <input type="submit" value="Submit A Hero">
+    </form>
+
+    <!-- image tag -->
+    <img src="https://images-na.ssl-images-amazon.com/images/I/81D%2BXXEnHBL._SY445_.jpg"
+    style="width:auto;" class="spidey"/>
+
+    <!-- image tag -->
+    <img src="https://images-na.ssl-images-amazon.com/images/I/81D%2BXXEnHBL._SY445_.jpg"
+    style="width:auto;" class="spidey"/>
 </body>
 </html>

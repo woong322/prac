@@ -1,0 +1,85 @@
+/* THIS IS A COMMENT IN A CSS FILE!!!! */
+
+
+/* THIS IS THE STRUCTURE OF A CSS STYLE RULE:
+
+    selector {
+        property-1: value-1;
+        property-2: value-2;
+        property-n: value-n;
+    }
+
+*/
+
+/* This is how you traget a tag/element */
+p{
+    color: purple;
+    text-align: right;
+
+}
+h3{
+    color:saddlebrown;
+}
+
+
+
+/* This is how you target a class
+The "class" attribute of an element is creating a classification for a group
+of elements, and target that group of elements without having to use their
+tag name
+*/
+.wedabess{
+    color: darkcyan;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+/* This is how you target an id 
+
+The "id" attribute of an element is a unique identifier for that element. YOu'd
+use this if you just want that ONE element to have some styling
+*/
+#anotha1{
+    color: blue;
+    text-align: center;
+
+}
+
+
+
+
+
+/* LET'S TAKE A LOOK AT MORE COMPLEX SELECTORS
+
+    AKA "COMBINATORS"
+*/
+
+/* this line selects EVERYTHING 
+I"ll leave it blankb ecause I don't want to change my entire CSS example*/
+*{
+
+}
+
+/* this specific example selects h4 elements that are children of a div tag */
+div>h4{
+    color:orange;
+}
+
+/* this specific example selects ANY child of a div tag */
+div>*{
+
+}
+
+h2.stuff{
+    color: chocolate;
+}
+
+/* BOX MODEL DEMO */
+
+.spidey{
+    border-style: groove;
+    border-color: coral;
+    border-width: 3px;
+    padding: 20px;
+    margin: 50px;
+}
