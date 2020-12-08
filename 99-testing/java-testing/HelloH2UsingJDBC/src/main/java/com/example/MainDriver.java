@@ -6,6 +6,12 @@ import com.example.model.Pokemon;
 import com.example.service.PokeService;
 import com.example.service.PokeServiceImpl;
 
+/*
+ * There are comments mentioning H2 throughout this example. But specifically I want you all to
+ * 	look at the dependencies inside pom.xml, the URL used to connect to your h2 database,
+ * 	the syntax used to create a table, and the path where the database files are stored
+ * 	(given in the url needed to connect to the database)
+ */
 public class MainDriver {
 
 	public static void main(String[] args) {
