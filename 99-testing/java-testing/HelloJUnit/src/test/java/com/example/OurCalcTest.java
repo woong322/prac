@@ -69,10 +69,17 @@ public class OurCalcTest {
 		//Assert.     <----if you push "." after "Assert" you can see a ton of methods
 		//assertTrue(yourCustomTestObject.equals(actualObject));
 		
-		//what is my return type is void
+		//what if my return type is void
 //		int tempVar = obj.myState + 1;
 //		obj.incrementor();
 //		assertEquals("Testing state change", tempVar,obj.myState);
+	}
+	
+	@Test
+	public void testVoidMethod() {
+		int whatTheValueSHOULDBe = calc.myState + 1;
+		calc.incrementorVoidMethod();
+		assertEquals("Testing state change", whatTheValueSHOULDBe, calc.myState);
 	}
 	
 	@Test

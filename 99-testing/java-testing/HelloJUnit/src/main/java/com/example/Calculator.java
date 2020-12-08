@@ -25,7 +25,6 @@ public class Calculator {
 	}
 	
 	public void throwingMethod() {
-		myState++;
 		throw new IllegalArgumentException();
 	}
 	
@@ -33,5 +32,10 @@ public class Calculator {
 		while(true) {
 			
 		}
+	}
+
+	public void incrementorVoidMethod() {
+		myState++;
+		
 	}
 }
