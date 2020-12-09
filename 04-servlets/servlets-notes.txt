@@ -1,0 +1,143 @@
+>>>>Download tomcat
+> https://tomcat.apache.org/download-90.cgi
+> download specifically the ***Binary Districutions CORE (zip or tar file)*** and the ***Source Code Distributions (zip or tar files)***
+>extract the CORE, not the source code
+
+
+
+
+
+------------------------------------------------------------
+What is the internet?
+   it's basically a series of client-server interactions
+   it's a giant messaging system
+
+What is a URL?
+   -stands for Uniform Resource Locator
+   -the URL has information to locate the computer where the requested
+	resource is located AND it has information for WHAT resource
+	you're looking for
+   -consists of protocol + ip address/domain + port +URI
+
+What is a protocol?
+  -the rules for web communication
+  -we overwhelmingly use HTTP or HTTPS when surfing the web
+  -HTTP stand for Hyper Text Transfer Protocol
+  -Btw, there are many other types of protocol: ftp, smtp, etc
+
+what is the domain (or ip address)?
+  -the directions/address to the computer that has your resource
+
+what is the port?
+  -this is the specific channel that the server is listening to
+  -each computer has somewhere around 65,000 ports and only one application
+    can listen on a single port at a time.
+  -so AFTER you use the ip address to find a computer, you need to find out
+    WHICH port on that computer your target server is listening to
+
+what is the URI (aka path)?
+  -the URI stands for Uniform Resource Identifier
+  -is the information that specifies WHICH resource your'e requesting from
+    the server. Because ethe server could have hundreds or thousands of resources
+
+
+----
+NOW, let's talk about HTTP/HTTPS in a bit more detail since that is the protocol
+	we'll be using the most
+
+Let's start with the HTTP Messaging System
+
+HTTP Request
+   Header -contains metadata
+	Common Headers include:
+	-http verb/method
+	-URL
+	-content type
+	-content length
+	-http version
+   Body -contains target resource (dataformat: HTML, JSON, XML, text, etc)
+
+
+HTTP Response
+   Header -contains metadata
+	Common Headers include:
+	-status code
+	-content type
+	-content length
+	-http version
+   Body -contains target resource (dataformat: HTML, JSON, XML, text, etc)
+
+>>>Status Code-
+	contains information on how successful the client's request was.
+
+	Status Code Ranges:
+	100s- Informational
+	200s- Success
+		examples:
+		200 - OK
+	300s- Redirection
+	400s- Client Error
+		examples:
+		400- bad request
+		403- forbidden
+		404- not found
+		405- method not allowed
+		410- gone
+		418- I'm a teapot
+	500s-  Server Error
+
+
+>>>Http Methods
+
+>Types of Http methods
+	>GET - retrieve a resource	(browser default)
+	>POST - creates a resource (can be versatile)
+	>PUT - updates a resource (replaces resources with a new resource)
+	>DELETE -removes a resource
+	>PATCH - partially update a resource
+	>HEAD - operates like a GET method, but only returns the header information
+	>OPTIONS - sends information on what functionality is available
+	---there are more
+	>TRACE
+	>COPY
+	etc
+
+These Http Methods are conventions
+
+
+>>>>>>>>What is a server?
+>Is a computer that is running server software
+
+>>What is server software?
+>software that is used to receive web requests and send web responses
+>In our case, our server software is....TOMCAT!!!!
+
+>>What is a Servlet?
+>A servlet is a java class that is tasked with handling a single URI inside of your server
+
+>>What is the servlet heirarchy?
+
+	(Servlet, interface)
+		|	init(), service(), destroy(),
+		|	getServletConfig(), getServletInfo()
+		|
+	(GenericServlet, abstract class)
+		|	implements init(), destroy()
+		|	implements getServletConfig(), getServletInfo()
+		|	creates new method getServletContext()
+		|
+	(HttpServlet, abstract class)
+		|	implements service()
+		|
+		|
+	(OurCustomServlet, class)
+
+
+
+
+
+
+
+
+
+
