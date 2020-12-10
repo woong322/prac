@@ -3,6 +3,17 @@
 > download specifically the ***Binary Districutions CORE (zip or tar file)*** and the ***Source Code Distributions (zip or tar files)***
 >extract the CORE, not the source code
 
+>>>>Integrating Tomcat with our workspace (do this for EVERY workspace, not every project)
+	window -> preferences -> server -> runtime environments -> add
+	*search for tomcat version 9 because that's teh version we downloaded)*
+	*click next*
+	*click broswer*
+	*now navigate to bomcat CORE folder, NOT THE SRC FOLDER*
+	*select, then apply and close*
+
+>>>FOR A MAC
+	Spring Tools Suite -> preferences.....
+
 
 
 
@@ -104,6 +115,88 @@ HTTP Response
 
 These Http Methods are conventions
 
+--------------
+>>What is a JSON?
+>Stands for: JavaScript Object Notation
+>JSON is a standardized dataformat that is VERY similar to an Object Literal in JavaScript
+>A JSON is NOT a JavaScript object, it is simply a string that represents an object
+
+
+>>>Detour: Object Literals
+	In Java:
+		int i=5; //THIS IS AN INTEGER LITERAL
+		double d= 5.0; //THIS IS A DOUBLE LITERAL
+		String s= "Hello"; //THIS IS A STRING LITERAL
+	In JavaScript:
+		var myObj = {
+			"attribute1": 5,
+			'attr2': "hello",
+			attr3: {
+				"subattr1": "hola",
+				"subattr2": 50
+			     },
+			"attr4": [4, 88, 12]
+		}
+
+>>>rules of JSON
+>	{ } <---denotes an object
+>	[ ] <---denotes an array
+>In short, a JSON is a list of key-value pairs. Variable names, and variable values.
+>each attribute/variable name MUST BE SURROUNDED WITH DOUBLE QUOTES
+>a ":" separates the variable name and the variable value
+>variables are separated by commas
+>variable values CAN BE objects or arrays themselves
+	>>what this means is that you can have subobject inside of your JSON
+
+>>>Now let's look at a JSON,  FIRST example:
+{
+	"attr1": 5,
+	"attr2": "hello",
+	"attr3": {
+		"subattr1": "hola",
+		"subattr2": 50
+	},
+	"attr4": [4, 88, 12],
+	"attr5": [{"arryattr1": 5},{"arryattr1": "hola", "arryattr2": "additional"},{"arryattr1": "que pasa?"}]
+}
+>>>LET'S TAKE THAT SAME JSON AND TURN IT INTO AN XML
+
+<xml>
+	<attr1>5</attr1>
+	<attr2>hello</attr2>
+	<attr3>
+		<subattr1>hola</subattr1>
+		<subattr2>50</subattr2>
+	</attr3>
+	<attr4>
+		<list>4</list>
+		<list>88</list>
+		<list>12</list>
+	</attr4>
+	<attr5>
+		<list>
+			<arryattr1>5</arryattr1>
+		</list>
+		<list>
+			<arryattr1>hola</arryattr1>
+			<arryattr2>additional</arryattr2>
+		</list>
+		<list>
+			<arryattr1>que pasa?</arryattr1>
+		</list>
+	</attr5>
+</xml>
+
+>>>Now let's look at a JSON,  SECOND example:
+[
+	50,
+	75,
+	"hello",
+	{"arryattr1": 5}
+]
+
+
+-----------------------------------------------------------------------------------
 
 >>>>>>>>What is a server?
 >Is a computer that is running server software
