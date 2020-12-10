@@ -236,7 +236,10 @@ These Http Methods are conventions
 
 
 
+additonally, we have:
 
+(HttpServletRequest, interface)
+(HttpServletResponse, interface)
 
 
 

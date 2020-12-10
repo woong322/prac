@@ -3,7 +3,7 @@
   <display-name>HelloServlets</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
+    <welcome-file>ServletHTMLDemo.html</welcome-file>
   </welcome-file-list>
   
   
@@ -12,13 +12,34 @@
   Two: tomcat can't read your web.xml, probably because you have a typo or forgot some tags 
    -->
   
+  
   <!-- DIRECT SERVLET CONFIGURATIONS -->
   <servlet>
+  	<!-- "servlet-name" is basically creating a variable inside of the web.xml so you can reference
+  		this servlet later with additional configurations -->
   	<servlet-name>DirectServletVariableName</servlet-name>
+  	<!-- hold ctrl and hover over this package to make sure it is linked -->
   	<servlet-class>com.example.directservlet.DirectServlet</servlet-class>
   </servlet>
+  
   <servlet-mapping>
+  	<!-- these are the said additional configurations -->
   	<servlet-name>DirectServletVariableName</servlet-name>
+  	<!-- "url-pattern" is defining your endpoint for this servlet. Aka WHICH urls this servlet will service -->
   	<url-pattern>/direct</url-pattern>
   </servlet-mapping>
+  
+  <!-- INDIRECT SERVLET CONFIGURATIONS -->
+  <servlet>
+  	<servlet-name>IndirectServlet</servlet-name>
+  	<servlet-class>com.example.indirectservlet.IndirectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>IndirectServlet</servlet-name>
+  	<url-pattern>/indirect</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>
+
+
