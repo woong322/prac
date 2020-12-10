@@ -14,6 +14,15 @@
 >>>FOR A MAC
 	Spring Tools Suite -> preferences.....
 
+(perform the following two steps EVERY war project, not JUST every workspace)
+
+>>>>>>NOW, after we've created a WAR project, let's create a web.xml to git rid of that red X
+	right click project -> java EE tools -> click "generate deployment descriptor stub"
+
+>>>>>>Let's also add tomcat to the project's buildpath so we can use tomcat classes/interfaces/etc
+	right click project ->click properties -> targeted runtimes
+	*check the apache tomcat box*
+	*apply and close*
 
 
 

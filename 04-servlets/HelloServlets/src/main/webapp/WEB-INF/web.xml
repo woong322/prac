@@ -4,9 +4,21 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+  <!-- Two commons reason why tomcat may fail to start:
+  One: the port is already in use
+  Two: tomcat can't read your web.xml, probably because you have a typo or forgot some tags 
+   -->
+  
+  <!-- DIRECT SERVLET CONFIGURATIONS -->
+  <servlet>
+  	<servlet-name>DirectServletVariableName</servlet-name>
+  	<servlet-class>com.example.directservlet.DirectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DirectServletVariableName</servlet-name>
+  	<url-pattern>/direct</url-pattern>
+  </servlet-mapping>
 </web-app>
