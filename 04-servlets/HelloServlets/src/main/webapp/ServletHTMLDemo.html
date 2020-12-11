@@ -6,7 +6,8 @@
 
 <link rel="stylesheet" type="text/css" href="/HelloServlets/mystyles.css"/>
 </head>
-<body>
+<body>   
+	<!-- THIS IS A COMMENT FROM VS CODE!!! 2ND ROUND OF CHANGES!!!-->
 	<div class="supervillain-container">
 		<h1>Welcome to SuperVillain Servlets</h1>
 		<p>Where minions serve their overlords~! Get it? "Serve"</p>
@@ -33,6 +34,47 @@
 			<p>Indirect Servlet, POST</p>
 			<input type="submit" value="Indirect Response">
 		</form>
+		
+		<!-- SESSION SERVLET EXAMPLE -->
+		<form method="GET" action="/HelloServlets/ses">
+			<p>Session Servlet, GET</p>
+			<input type="submit" value="Push Danny Boy to the session">
+		</form>
+		
+		<form method="POST" action="/HelloServlets/ses">
+			<p>Session Servlet, POST</p>
+			<input type="text" name="myname" placeholder="villname"/>
+			<input type="text" name="mysuperpower" placeholder="superpower"/>
+			<input type="number" name="mybounty" placeholder="value of bounty($)"/>
+			<input type="submit" value="Push a CUSTOM villain to the session">
+		</form>
+		
+		<!-- HELPER SESSION SERVLET EXAMPLE -->
+		<form method="GET" action="/HelloServlets/helpses">
+			<p>Helper Session Servlet, GET</p>
+			<input type="submit" value="Obtain a villain from the session">
+		</form>
+		
+		<form method="POST" action="/HelloServlets/helpses">
+			<p>Helper Session Servlet, POST</p>
+			<input type="submit" value="Log Out">
+		</form>
+		
+		<!-- GET VS POST DEMO -->
+		<form method="get">
+			<p>GET, demo</p>
+			<input type="text" name="username" placeholder="enter username">
+			<input type="text" name="password" placeholder="enter password">
+			<input type="submit" value="Submit the Get">
+		</form>
+		
+		<form method="post">
+			<p>POST, demo</p>
+			<input type="text" name="username" placeholder="enter username">
+			<input type="text" name="password" placeholder="enter password">
+			<input type="submit" value="Submit the Post">
+		</form>
+		
 	</div>
 </body>
 </html>

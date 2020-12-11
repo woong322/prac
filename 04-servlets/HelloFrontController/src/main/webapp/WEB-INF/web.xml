@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>HelloFrontController</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  
+  <!-- FORWARDING MASTER SERVLET CONFIGURATIONS -->
+  <servlet>
+    <description></description>
+    <display-name>ForwardingMasterServlet</display-name>
+    <servlet-name>ForwardingMasterServlet</servlet-name>
+    <servlet-class>com.example.servlet.ForwardingMasterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForwardingMasterServlet</servlet-name>
+    <url-pattern>/forwarding/*</url-pattern>
+    <url-pattern>*.forward</url-pattern>
+    
+    <!-- YES, we can hae multiple url-patterns tags -->
+    <!-- <url-pattern>/MyServlet</url-pattern>
+    <url-pattern>/Wumpus</url-pattern> -->
+  </servlet-mapping>
+  
+  
+  
+  <!-- JSON MASTER SERVLET CONFIGURATIONS -->
+  <servlet>
+    <description></description>
+    <display-name>JsonMasterServlet</display-name>
+    <servlet-name>JsonMasterServlet</servlet-name>
+    <servlet-class>com.example.json.JsonMasterServlet</servlet-class>
+    <!-- negative values are lazy loading servlets
+    	(only when soemone calls it
+    	
+    	0 or greater values means eager loading servlets
+    	(they will load from 0 having higest priority) -->
+    <load-on-startup>-1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JsonMasterServlet</servlet-name>
+    <url-pattern>/json/*</url-pattern>
+    <url-pattern>*.json</url-pattern>
+  </servlet-mapping>
+</web-app>

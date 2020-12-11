@@ -14,7 +14,7 @@
 >>>FOR A MAC
 	Spring Tools Suite -> preferences.....
 
-(perform the following two steps EVERY war project, not JUST every workspace)
+(perform the following three steps EVERY war project, not JUST every workspace)
 
 >>>>>>NOW, after we've created a WAR project, let's create a web.xml to git rid of that red X
 	right click project -> java EE tools -> click "generate deployment descriptor stub"
@@ -24,6 +24,8 @@
 	*check the apache tomcat box*
 	*apply and close*
 
+>>>>>Also consider right clicking your tomcat in the servers window -> add and remove ->
+	click your project
 
 
 
@@ -123,6 +125,23 @@ HTTP Response
 	etc
 
 These Http Methods are conventions
+
+-------
+>>>>>GET vs POST
+
+	GET
+	>GET transfers data using the URL (it displays the data out in the open)
+	>GET can be bookmarked, allowing people to save (or send to friends) query parameters
+	>because GET uses the URL there is a size limit to a GET, because there is a size limit
+		to a URL
+	>don't say "get doesn't have a body" if someone asks, because it does
+		>>instead say soemthing like "get usually doesn't have contents in its body"
+
+	POST
+	>POST transfer data using the body (it hides the data)
+	>is more secure, because data like passwords aren't right in the URL
+	>theorectically limitless data in the body
+
 
 --------------
 >>What is a JSON?

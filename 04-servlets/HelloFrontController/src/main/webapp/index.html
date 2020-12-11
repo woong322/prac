@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Front Controller Example</title>
+<link rel="stylesheet" type="text/css" href="/HelloFrontController/resources/css/mystyles.css" />
+</head>
+<body>
+
+	<div class="login-container">
+		<h4>Front Controller Design Pattern example</h4>
+		
+		<!-- FORWARDING Servlet Examples -->
+		<form method="post" action="/HelloFrontController/forwarding/login">
+			<p>Please log in, arigato!</p>
+			<input type="text" placeholder="enter username" name="username"/>
+			<br>
+			<input type="text" placeholder="enter password" name="password"/>
+			<br>
+			<input type="submit" value="Login"/>
+		</form>
+		
+		<!-- JSON Servlet Examples -->
+		<form method="GET" action="/HelloFrontController/json/apple">
+			<p>JSON Servlet Button</p>
+			<input type="submit" value="Find Apple">
+		</form>
+		
+		<form method="GET" action="/HelloFrontController/json/pepper">
+			<p>JSON Servlet Button</p>
+			<input type="submit" value="Find Pepper">
+		</form>
+	</div>
+</body>
+</html>

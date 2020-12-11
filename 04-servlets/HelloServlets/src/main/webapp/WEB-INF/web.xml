@@ -39,7 +39,25 @@
   	<url-pattern>/indirect</url-pattern>
   </servlet-mapping>
   
+  <!-- SESSION SERVLET CONFIGURATIONS -->
+  <servlet>
+  	<servlet-name>SesServ</servlet-name>
+  	<servlet-class>com.example.sessionservlet.SessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SesServ</servlet-name>
+  	<url-pattern>/ses</url-pattern>
+  </servlet-mapping>
   
+  <!-- HELPER SESSION SERVLET CONFIGURATIONS -->
+  <servlet>
+  	<servlet-name>HelpSesServ</servlet-name>
+  	<servlet-class>com.example.sessionservlet.HelperSessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HelpSesServ</servlet-name>
+  	<url-pattern>/helpses</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 
