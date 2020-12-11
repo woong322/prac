@@ -261,7 +261,23 @@ additonally, we have:
 (HttpServletResponse, interface)
 
 
-
+>>>What is the servlet lifecyle?
+	init()
+		creates and initializes the servlet object
+		will be run a single time in the lifecyle
+		will be run WHEN the server starts up OR when the first request happens
+			(there is a way to configure this)
+	service()
+		the servlet will SERVICE the Http Request
+		(that is to say, it will perform logic for the Http Request)
+		will be run the same amount of times that we have Http Request
+		(that is to say, it will be run MANY times)
+		will be run WHEN we have an Http Request
+	destroy()
+		destroys the servlet object
+		will be run a single time in the lifecyle
+		will be run WHEN the server shutsdown
+			(or if there is some fatal error with the servlet)
 
 
 
