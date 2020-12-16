@@ -46,7 +46,10 @@ function myFunctionThree(){
     return 5;
 }
 
-//console.log(myFunctionThree());
+var x = myFunctionThree();
+console.log(x);
+
+console.log(myFunctionThree());
 
 
 
