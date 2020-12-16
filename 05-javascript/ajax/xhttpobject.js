@@ -100,4 +100,5 @@ function getPoke(){
 function ourDOMManipulation(ourJSON){
     document.getElementById("pokeName").innerText = ourJSON.name;
     document.getElementById("pokedexNumber").innerText = ourJSON.id;
+    document.getElementById("pokeImage").setAttribute("src", ourJSON.sprites.front_default);
 }
