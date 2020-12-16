@@ -24,6 +24,15 @@ window.onload = function(){
     document
         .getElementById('pokeSubmit')
         .addEventListener('click', getPoke);
+
+
+        /*
+            in your project 1 you'll do something like this
+        
+            triggerMyInitialAjaxRequest() 
+                                    which triggers the url:
+                                        localhost:8080/api/getUserFromCurrentSession
+        */
 }
 
 function getPoke(){
