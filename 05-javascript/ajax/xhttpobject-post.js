@@ -1,4 +1,26 @@
 /*
+NOW, LET'S SEE HOW TO USE XHTTP WITH A POST METHOD
+
+
+I started by copying all of the code in "xhttpobject.js" and I"ll modify it slightly to show you how you'd normally use a post
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     What is AJAX?
     -Asysnchronous JavaScript and XML
     -It's a series of steps that will allow JS to perform tasks asychronously
@@ -91,7 +113,7 @@ function getPoke(){
         OR
         xhttp.open(httpMethod, url, boolean async?) <----default to true for the boolean
    */
-  xhttp.open("GET", 'https://pokeapi.co/api/v2/pokemon/'+pokeId);
+  xhttp.open("POST", 'https://pokeapi.co/api/v2/pokemon/'+pokeId); // <-----MODIFIED THIS STEP FOR THE POST DEMO
 
   //in YOUR project it will look like this:
   //    xhttp.open("GET", 'http://localhost:8080/api/mypath');
@@ -100,9 +122,17 @@ function getPoke(){
 
 
    /*
-        STEP 4: send the request
+        STEP 4: send the request       <-------MODIFIED THIS ENTIRE STEP FOR THE POST DEMO
    */
-  xhttp.send();
+  xhttp.setRequestHeader('Content-type', 'application/json');
+
+  let myObj ={
+      "name": "myChar",
+      "character": ['char1', 'char2', 'char3'],
+      "rating": 5.0
+  }
+
+  xhttp.send(JSON.stringify(myObj));
 
 }
 
@@ -112,3 +142,5 @@ function ourDOMManipulation(ourJSON){
     document.getElementById("pokedexNumber").innerText = ourJSON.id;
     document.getElementById("pokeImage").setAttribute("src", ourJSON.sprites.front_default);
 }
+
+

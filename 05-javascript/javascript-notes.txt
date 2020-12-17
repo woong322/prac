@@ -13,10 +13,12 @@ mywebsite.net/api/rebursement/id/{id}
 mywebsite.net/api/rebursement       <---the body will contain the new JSON to be put into the DB
 
 //update (PUT http method)
+mywebsite.net/api/rebursement           <-----the body of the request will contain the necessary ID
 mywebsite.net/api/rebursement/{id}        <---the body will contain the new JSON to replace the existing record
 mywebsite.net/api/rebursement/update/{id} 
 
 //delete (DELETE http method)
+mywebsite.net/api/rebursement           <-----the body of the request will contain the necessary ID
 mywebsite.net/api/rebursement/{id}
 mywebsite.net/api/rebursement/delete/{id}
 
