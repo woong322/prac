@@ -47,10 +47,9 @@ function myFunctionThree(){
 }
 
 var x = myFunctionThree();
-console.log(x);
+// console.log(x);
 
-console.log(myFunctionThree());
-
+// console.log(myFunctionThree());
 
 
 
