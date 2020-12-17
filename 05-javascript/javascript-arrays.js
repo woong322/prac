@@ -208,6 +208,7 @@ searches each element of the array to see if ANY of the elements pass a "test". 
 element passes the test, then some() returns true. Else it returns false.
 
 note: every() is a similar array method, but it needs to check to make sure EVERY element passes the "test"
+
 */
 let someArray = [5, 8, 10, 12];
 let newSomeArray= someArray.some(
@@ -221,6 +222,9 @@ let newSomeArray= someArray.some(
 
 /*
 reduce
+
+reduce will skip over the first index, and start with the second index.
+also that first myTotal will contain the value of the first index's value (if no initial value)
 */
 let reduceArray = [10, 20, 60, 10];
 let newReduceArray= reduceArray.reduce(
@@ -228,8 +232,8 @@ let newReduceArray= reduceArray.reduce(
         return myTotal+ myValue;
     }
 );
-console.log(newReduceArray);
-console.log(reduceArray);
+// console.log(newReduceArray);
+// console.log(reduceArray);
 
 
 
@@ -240,14 +244,8 @@ let newReduceArrayTWO= reduceArrayTWO.reduce(
         //in which case you may not be ADDING th objects
         //  you'd maybe be adding attribute dynaimically or something
 
-        if(myIndex==0){
-            myTotal = {"attr1": "value1"};
-            return {"attr1": "value1"};
-        }else{
-            console.log("total for index"+myIndex+": "+myTotal)
-            return myTotal;
-
-        }
+        
+        return {"attr1": "value1"};
 
         //return myTotal+ myValue;
     }
