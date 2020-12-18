@@ -1,0 +1,24 @@
+What is typescript?
+It's a superset of javascript developed by microsoft.
+Anything you can do in javascript you can also do in typescript; in short typescript adds extra features.
+
+Typescript is transpiled into javascript because a browser can't read typescript. We transpile using (tsc).
+
+Features of Typescript?
+-Strongly Typed
+-Easier to debug
+-it also adds access modifiers and encapsulation.
+
+--------
+To install typescript   (mac users may have to use "sudo")
+    "npm install -g typescript"
+
+Let's check to see if it installed
+    "tsc -v"
+
+//if you have problem with your execution policy
+// you can get typescript to function appropriately by opening a powershell
+//  as an admin and running "Set-ExecutionPolicy RemoteSigned"
+// https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1
+
+
