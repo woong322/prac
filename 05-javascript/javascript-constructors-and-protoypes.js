@@ -77,5 +77,3 @@ console.log(gingerJ);
 
 
 
-
-
