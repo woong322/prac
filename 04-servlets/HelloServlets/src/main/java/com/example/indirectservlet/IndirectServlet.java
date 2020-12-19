@@ -46,8 +46,8 @@ public class IndirectServlet extends HttpServlet{
 		//FORWARDING
 		//ONE request, ONE response
 		//client is totally UNAWARE of the new resource/entity
-		//RequestDispatcher redis = req.getRequestDispatcher("/secondpage.html");
-		RequestDispatcher redis = req.getRequestDispatcher("/direct");
+		RequestDispatcher redis = req.getRequestDispatcher("/secondpage.html");
+		//RequestDispatcher redis = req.getRequestDispatcher("/direct");
 		
 		//note: forwarding does NOT work for resources external to the server
 		//RequestDispatcher redis = req.getRequestDispatcher("https://www.google.com");

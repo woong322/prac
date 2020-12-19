@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Demo</title>
+</head>
+<body>
+    <h2>The event demo!!!</h2>
+
+    <!-- old way of creating events (less dynamic) -->
+    <button onclick="alert('this is mambo numba 5')">One: Scramble the faeries!!!</button>
+    <br><br>
+
+    <!-- NOW we can use separation of concerns, and use functions from our JS file
+    ....but....what happens if someone dynamically adds a button? -->
+    <button onclick="myButtonClickFunc()">Two: Scramble the faeries!!!</button>
+    <br><br>
+
+    <button id="daButton">Three: Scramble the faeries!!!</button>
+
+    <!-- BTW, you can add functionality to any element using JS, it doesn't have
+    to be a button -->
+
+    <script type="text/javascript" src="./events.js"></script>
+</body>
+</html>

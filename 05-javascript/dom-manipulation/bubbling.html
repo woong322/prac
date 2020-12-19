@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbles</title>
+</head>
+<body>
+    <div>
+
+        <h3>Welcome to Bubbling</h3>
+    </div>
+    <div>
+        <form onclick="alert('form')">
+            form
+            <div onclick="event.stopPropagation(); alert('div')">
+                div
+                <p onclick="alert('para')">Look at this</p>
+            </div>
+        </form>
+    </div>
+    <!-- What is bubbling?
+        >the process of events propagating to their parent elements to trigger
+        even more functionality. So if a click event fires, that click even will be
+        passed to all parents, grandparents, etc of the current element.
+
+        What is capturing?
+        >the process of events propagating from their parents to children; the opposite
+        of bubbling
+    -->
+</body>
+</html>

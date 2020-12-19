@@ -6,7 +6,9 @@
   </welcome-file-list>
   
   
-  <!-- FORWARDING MASTER SERVLET CONFIGURATIONS -->
+  <!-- FORWARDING MASTER SERVLET CONFIGURATIONS
+  		(you could also call this your "FormMasterServlet")
+   -->
   <servlet>
     <description></description>
     <display-name>ForwardingMasterServlet</display-name>
@@ -25,7 +27,9 @@
   
   
   
-  <!-- JSON MASTER SERVLET CONFIGURATIONS -->
+  <!-- JSON MASTER SERVLET CONFIGURATIONS
+  		(you could also call this your "AjaxMasterServlet")
+   -->
   <servlet>
     <description></description>
     <display-name>JsonMasterServlet</display-name>
