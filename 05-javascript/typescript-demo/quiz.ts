@@ -5,7 +5,9 @@
     When you use the export keyword on a class or function, it becomes a module
 */
 
-export class Quiz{
+class Quiz{
     questionNum: number;
     points: number;
 }
+
+export type {Quiz};

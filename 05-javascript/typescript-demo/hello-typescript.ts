@@ -1,6 +1,5 @@
-
-
-import {Quiz} from "./quiz";
+import type {Quiz} from "./quiz";
+//const myQuizFile = require('./quiz');
 
 /*
 to transpile typescript into js
@@ -297,9 +296,9 @@ pupper.printState();
 
 //using the "get" and "set" kehywords make the getter and setters behave more like
 // fields than methods
-console.log(pupper.Name);
-pupper.Name= "Spot";
-console.log(pupper.Name);
+// console.log(pupper.Name);
+// pupper.Name= "Spot";
+// console.log(pupper.Name);
 
 
 
@@ -328,5 +327,5 @@ printQuiz( {questionNum: 225, points: 100});
 
 
 
-
+export {};
 
