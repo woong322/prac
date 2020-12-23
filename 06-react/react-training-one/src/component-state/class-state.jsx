@@ -1,14 +1,16 @@
 import React from 'react';
 
 class ClassStateComponent extends React.Component {
-    constructor(props){
-        super(props);
-        this.state={buttonClickCount: 0};
+    // constructor(props){
+    //     super(props);
+    //     this.state={buttonClickCount: 0};
 
-        this.myCustomEventHandler = this.myCustomEventHandler.bind(this);
-    }
+    //     this.myCustomEventHandler = this.myCustomEventHandler.bind(this);
+    // }
+    
+    state= {buttonClickCount: 0};
 
-    myCustomEventHandler(event){
+    myCustomEventHandler = (event) =>{
         const moreClicks = this.state.buttonClickCount +1;
 
         console.log("button clicked, value: ", moreClicks);

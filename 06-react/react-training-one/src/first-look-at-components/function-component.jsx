@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
     Theya re actually best practice in the industry.
     Easier to read and test. Less code.
     Accessing the state is a bit different than ClassComponents but still possible.
-    
+
 
     The    { }     syntax is referred to as "interpolation". Interpolation evaluates an expression of some
     sort. It is similar to template literals.
