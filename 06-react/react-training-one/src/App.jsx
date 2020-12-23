@@ -2,9 +2,11 @@ import React from 'react';
 import './App.css';
 import ChildToParentInfoFlow from './assorted-lessons/child-to-parent-info';
 import ContainerComponent from './assorted-lessons/container-component';
+import FormDemo from './assorted-lessons/form-lesson';
 import HtmlAttributes from './assorted-lessons/html-attributes';
 import ListComponent from './assorted-lessons/list-component';
 import ClassStateComponent from './component-state/class-state';
+import FunctionStateComponent from './component-state/function-state';
 import MyClassComponent from './first-look-at-components/class-component';
 import MyFunctionComponent from './first-look-at-components/function-component';
 
@@ -49,7 +51,10 @@ function App() {
       a callback function (we also happen to be using the spread operator) */}
       <ChildToParentInfoFlow {...parentObject} />
 
+      {/* This example demonstrates ohw your components can hold state. Keep in mind, class and function
+      components have different steps in order to maintain state and rerender the view */}
       <ClassStateComponent/>
+      <FunctionStateComponent randomQuestionAsked={5}/>
 
 
 
@@ -72,6 +77,7 @@ function App() {
           <h6>Inside container component: oscar</h6>
       </ContainerComponent>
 
+        <FormDemo/>
     </div>
   );
 }
