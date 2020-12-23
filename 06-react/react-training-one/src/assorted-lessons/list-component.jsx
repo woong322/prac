@@ -6,12 +6,12 @@ import React from 'react';
 */
 function ListComponent(props){
 
-    let i=0;
 
     let myList= ["listElemOne", "listElemTwo", "listElemThree"];
 
     return (
         <>
+            ListComponent starts here:
             {myList.map((myString) => <h6 key={myString}>{myString}</h6>)}
         </>
     );
