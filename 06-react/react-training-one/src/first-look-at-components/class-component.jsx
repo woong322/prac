@@ -7,6 +7,10 @@ import React from 'react';
         -And they can hook into the lifecyle of a component easier (...stay tuned for this...because later on
             we have tools that can let function components have state)
 
+
+    The    { }     syntax is referred to as "interpolation". Interpolation evaluates an expression of some
+    sort. It is similar to template literals.
+
 */
 class MyClassComponent extends React.Component {
   render() {
