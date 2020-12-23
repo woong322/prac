@@ -9,8 +9,8 @@ import MyFunctionComponent from './first-look-at-components/function-component';
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <MyClassComponent/>
-    <MyFunctionComponent/>
+    {/* <MyClassComponent/>
+    <MyFunctionComponent/> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

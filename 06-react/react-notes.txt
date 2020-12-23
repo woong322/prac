@@ -55,3 +55,27 @@ BUT what happens if your coworker does a git pull without the dependencies?
 HOW do they get the dependencies then?
 >they navigate to the project folder then do a "npm install"
 >"npm install" will look at the current directory's "package.json" and download all those dependencies
+
+
+----Let's install ESLint
+To install ESLint into your project:
+    "npm install eslint --save-dev"
+To initialize ESLint
+    "./node_modules/.bin/eslint --init"
+    OR we can create a shortcut in our package.json:
+        package.json script:
+        "lintStart": "eslint --init"
+        run this terminal command:
+        "npm run lintStart"
+
+Now you can setup whatever linting rules you'd like.
+For this demo, i'll use the following options during the initialize process:
+-"to check syntax"
+-"JavaScript modules (import/export)"
+-"React"
+-"No"
+-"Browser" & "Node"       (there is an option for this, read the prompt)
+-"Popular style guide"
+-"AirBnB"
+-"JSON"
+-"yes" you want to install
