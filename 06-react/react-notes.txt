@@ -25,6 +25,27 @@ What is Babel?
 >Babel is a JS transpiler.
 >Let's go over to "BabelJS.io" in the browser so we can lay with JSX and Babel itself for a moment.
 
+Single Responsibility Principle?
+>Each component will responsible for ONE feature/task. Each of its behaviors will be focused in on completing
+    that one task. This allows your components to be more reusable and more modular.
+
+Component Lifecycle?
+> https://reactjs.org/docs/react-component.html
+> Belows are teh more commonly used lifecycle methods:
+
+Mounting
+    constructor()
+    render()
+    componentDidMount()
+Updating
+    render()
+    componentDidUpdate()
+Unmounting
+    componentWillUnmount()
+
+Error Handling (happens in the case of issues)
+
+note: there are some lesser used lifecycle hooks like "shouldComponentUpdate()"
 
 -------ENOUGH TALKING!!! LET'S TAKE A LOOK AT REACT!!!!----------
 THE FOLLOWING ARE TERMINAL COMMANDS
@@ -79,3 +100,9 @@ For this demo, i'll use the following options during the initialize process:
 -"AirBnB"
 -"JSON"
 -"yes" you want to install
+
+
+------install axios
+npm install axios
+
+> https://www.npmjs.com/package/axios
