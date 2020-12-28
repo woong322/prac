@@ -1,0 +1,48 @@
+Components 
+- separation of concerns, each have their own functionality or view
+- have parent/child relationships
+- primary unit of code reuse in React
+
+1. Function Components
+2. Class Components 
+
+Managing State within a 
+- this.state in class components 
+- useState in functional components (a hook like useEffect, useContext) 
+
+Component Composition
+    Container vs Presentation Components
+    > Container Components
+        - mainly concerned with application logic 
+        - contain little or no markup
+        - typically stateful
+    > Presentation Components 
+        - nearly all markup 
+        - receive data and functions via props from container components
+        - typical not stateful
+
+    * we refer to these components as container/presentation but you may also hear smart/dumb, stateful/stateless, controller view/view
+
+Specialization
+    - we can create a parent/child relationship where the child is a specialized version of the parent
+    - build on a general parent component, passing in props to compose a child component with more specific information or functionality
+
+Containment 
+    - we can utilize the "children" prop within a component, which is passed in automatically by react and represent any nested components within the parent component
+    - this is good for wrapping styling/functionality around portions of your application
+
+Hooks in Function Components
+    - lifecycle methods are only available in class based components
+    - react has a handful of hooks, you can even create your own custom hooks
+    - useState is used to handle local state
+        - takes a param of the initial value of that state 
+        - returns the state field as well as a function that can be used to set state
+    - useEffect is used to handle side effects 
+        - runs after each render
+        - takes two parameters: 
+            1. callback which occurs 
+            2. dependency array 
+                > this can be an empty array, indicating that the callback will run once upon the initial render
+                > if we have some value that we want to trigger the callback with when that value changes, we can add this to the dependency
+                > when a state or prop in your dependency array changes, callback again will be executed
+        - useEffect replaces the functionality of lifecycle methods provided in class components
