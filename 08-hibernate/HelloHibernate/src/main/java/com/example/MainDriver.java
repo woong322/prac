@@ -15,6 +15,14 @@ public class MainDriver {
 		System.out.println("\nABOUT TO SELECT BY ID");
 		System.out.println(villServ.getUsingId(1));
 		
+		//SELECT BY NAME
+		System.out.println("\nABOUT TO SELECT BY NAME");
+		System.out.println(villServ.getUsingName("ScreenSlaver"));
+		
+		//SELECT ALL SUPERVILLAINS
+		System.out.println("\nABOUT TO SELECT ALL SUPERVILLAINS");
+		System.out.println(villServ.getAllVills());
+		
 		System.out.println("End of program.");
 	}
 	
