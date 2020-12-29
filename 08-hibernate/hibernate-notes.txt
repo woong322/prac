@@ -1,0 +1,51 @@
+>>>>What is Hibernate?
+>Hibernate is an ORM and persistence framework?
+
+>>>>What is an ORM?
+>Object Relational Mapping. ORMs take objects in programming languages and translate
+	them into DB tables
+
+>>>>What is "persistence"?
+>storing your information/data in a form that is durable (so, in our DB)
+	>>Durable being one of our ACID properties, remember
+
+>>>>What are some benefits of HIbernate?
+>As developers, we no longer have to write complex sql queries.
+	>>Hibernate will peform LOTS of complexityy for us.
+
+>Hibernate is object oriented
+>HIbernate is fast for a variety of reasons:
+	>It has caching
+	>It uses connection pooling to minimize bottle necked speeds caused by creating
+		connections through the network.
+>Hibernate is modular. You're able to write code using hibernat and later switch sql languages entirely by simply changing out the driver you're using. No need to change your code base at all.
+
+
+
+>>>>>>let's talk about important classes and interfaces in Hibernate
+
+Configuration (class)
+Configuration's job is to gather information for the hibernate.cfg.xml file and use
+that information to create a SessionFactory object
+
+SessionFactory (interface)
+SessionFactory's job is to create sessions and store information on HOW to make connections to the database. Once it's configured it is immutable.
+
+Session (interface)
+Session manages the connection to your database and provides create, read, update, and delete operations.
+
+Transaction (interface)
+Transaction manages.....welll.....your transactions (and cache). Must be ACID.
+
+
+
+
+
+
+
+
+
+
+
+
+
