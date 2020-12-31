@@ -114,7 +114,7 @@ public class VillDaoImpl implements VillDao {
 		
 		
 		//NATIVE SQL
-		List<SuperVillain> villList = ses.createNativeQuery("select * from Hibernate_SuperVillain "
+		List<SuperVillain> villList = ses.createNativeQuery("select * from SuperVillain "
 				+ "where name='"+name+"'", SuperVillain.class).list();
 		
 		

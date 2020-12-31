@@ -9,11 +9,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Hibernate_SuperVillain")
+@Table(name="SuperVillain")
 public class SuperVillain {
 
 	@Id
@@ -47,6 +49,10 @@ public class SuperVillain {
 	@ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Crime> crimes;
 	
+	@ManyToOne(cascade= CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="Prison_FK")
+	private SuperPrison myPrison;
+	
 	/*
 	 * no args constructor, all args constructor
 	 * getters/setters
@@ -55,27 +61,31 @@ public class SuperVillain {
 	
 	public SuperVillain() {
 		/*
-		 * HIbernate NEEDS this constructor. When hibernate creates versions of YOUR
+		 * Hibernate NEEDS this constructor. When hibernate creates versions of YOUR
 		 * object it first creates an empty object then uses the setters to load
 		 * the information into the object.
 		 */
 	}
-
-	public SuperVillain(String name, String superpower, int bounty, List<Crime> crimes) {
+	
+	public SuperVillain(String name, String superpower, int bounty, List<Crime> crimes,
+			SuperPrison myPrison) {
 		super();
 		this.name = name;
 		this.superpower = superpower;
 		this.bounty = bounty;
 		this.crimes = crimes;
+		this.myPrison = myPrison;
 	}
-	
-	public SuperVillain(int svillId, String name, String superpower, int bounty, List<Crime> crimes) {
+
+	public SuperVillain(int svillId, String name, String superpower, int bounty, List<Crime> crimes,
+			SuperPrison myPrison) {
 		super();
 		this.svillId = svillId;
 		this.name = name;
 		this.superpower = superpower;
 		this.bounty = bounty;
 		this.crimes = crimes;
+		this.myPrison = myPrison;
 	}
 
 	public int getSvillId() {
@@ -118,9 +128,19 @@ public class SuperVillain {
 		this.crimes = crimes;
 	}
 
+	public SuperPrison getMyPrison() {
+		return myPrison;
+	}
+
+	public void setMyPrison(SuperPrison myPrison) {
+		this.myPrison = myPrison;
+	}
+
 	@Override
 	public String toString() {
 		return "\n\tSuperVillain [svillId=" + svillId + ", name=" + name + ", superpower=" + superpower + ", bounty="
-				+ bounty + ", crimes=" + crimes + "]";
+				+ bounty + ", crimes=" + crimes + ", myPrison=" + myPrison + "]";
 	}
+	
+	
 }
