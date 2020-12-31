@@ -49,7 +49,7 @@ public class SuperVillain {
 	@ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Crime> crimes;
 	
-	@ManyToOne(cascade= CascadeType.ALL, fetch=FetchType.EAGER)
+	@ManyToOne(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name="Prison_FK")
 	private SuperPrison myPrison;
 	
@@ -138,8 +138,21 @@ public class SuperVillain {
 
 	@Override
 	public String toString() {
+		/*
+		 * The toString() is a standin for JSONs in your project 2
+		 * The issue is that the toString() is trying to print a supervill's
+		 * prisson...then the prison is trying to print the supervill...and so on...
+		 * 
+		 * 
+		 * (To fix this in JSONs look into @JsonIgnore, this'll assist you later in
+		 * solving the stack overflow issue when you attempt to send data to your client)
+		 * 
+		 * (in the toString() we fix it by printing the prison's name
+		 * INSTEAD OF PRINT THE ENTIRE PRISON AND ITS CONTENTS)
+		 */
+		
 		return "\n\tSuperVillain [svillId=" + svillId + ", name=" + name + ", superpower=" + superpower + ", bounty="
-				+ bounty + ", crimes=" + crimes + ", myPrison=" + myPrison + "]";
+				+ bounty + ", crimes=" + crimes + ", myPrison=" + myPrison.getSprisonName()+ "]";
 	}
 	
 	
