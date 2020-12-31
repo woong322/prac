@@ -11,8 +11,25 @@ public class HibernateUtil {
 				.configure("hibernate.cfg.xml")
 				.buildSessionFactory();
 	
+	//OUR GLOBAL SESSION OBJECT!!!
+	private static Session ses;
+	
 	public static Session getSession() {
-		return sf.openSession();
+		//return sf.openSession();
+		
+		if(ses==null)
+			ses=sf.openSession();
+		
+		return ses;
+	}
+	
+	public static void closeSession() {
+		ses.close(); //session
+		ses=null;
+		sf.close();//session factory
+		/*
+		 * this is to be called at the end of your application
+		 */
 	}
 	
 }

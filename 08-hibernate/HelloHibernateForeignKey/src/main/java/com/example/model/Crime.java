@@ -13,7 +13,7 @@ public class Crime {
 
 	@Id
 	@Column(name="crime_id")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int crimeId;
 	
 	@Column(name="crime_name", nullable=false, unique=true)
@@ -64,6 +64,6 @@ public class Crime {
 
 	@Override
 	public String toString() {
-		return "\n\tCrime [crimeId=" + crimeId + ", crimeName=" + crimeName + ", description=" + description + "]";
+		return "\n\t\tCrime [crimeId=" + crimeId + ", crimeName=" + crimeName + ", description=" + description + "]";
 	}
 }

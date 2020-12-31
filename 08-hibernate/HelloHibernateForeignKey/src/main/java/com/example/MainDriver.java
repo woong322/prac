@@ -8,9 +8,16 @@ import com.example.model.SuperVillain;
 import com.example.service.CrimeServiceImpl;
 import com.example.service.VillService;
 import com.example.service.VillServiceImpl;
+import com.example.util.HibernateUtil;
 
 public class MainDriver {
 
+	/*
+	 * COMMON HIBERNATE EXCEPTION
+	 * 
+	 * -LazyIntializationException
+	 */
+	
 	public static VillService villServ = new VillServiceImpl();
 	public static CrimeServiceImpl crimeServ = new CrimeServiceImpl();
 	
@@ -19,11 +26,11 @@ public class MainDriver {
 		
 		//SELECT BY ID
 		System.out.println("\nABOUT TO SELECT BY ID");
-		System.out.println(villServ.getUsingId(1));
+		System.out.println(villServ.getUsingId(7));
 		
 		//SELECT BY NAME
 		System.out.println("\nABOUT TO SELECT BY NAME");
-		System.out.println(villServ.getUsingName("ScreenSlaver"));
+		System.out.println(villServ.getUsingName("Sonali"));
 		
 		//SELECT ALL CRIME
 		System.out.println("\nABOUT TO SELECT ALL CRIMES");
@@ -33,6 +40,7 @@ public class MainDriver {
 		System.out.println("\nABOUT TO SELECT ALL SUPERVILLAINS");
 		System.out.println(villServ.getAllVills());
 		
+		HibernateUtil.closeSession();
 		System.out.println("End of program.");
 	}
 	

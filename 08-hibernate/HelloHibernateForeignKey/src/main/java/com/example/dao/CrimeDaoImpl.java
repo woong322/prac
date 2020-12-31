@@ -20,7 +20,7 @@ public class CrimeDaoImpl {
 
 		// boilerplate session end, no specific business logic for my CRUD operation
 		tx.commit();
-		ses.close();
+//		ses.close();
 	}
 
 	public void update(Crime crime) {
@@ -33,7 +33,7 @@ public class CrimeDaoImpl {
 
 		// boilerplate session end, no specific business logic for my CRUD operation
 		tx.commit();
-		ses.close();
+//		ses.close();
 
 	}
 
@@ -47,7 +47,7 @@ public class CrimeDaoImpl {
 
 		// boilerplate session end, no specific business logic for my CRUD operation
 		tx.commit();
-		ses.close();
+//		ses.close();
 
 	}
 
@@ -59,7 +59,7 @@ public class CrimeDaoImpl {
 		Crime crime = ses.get(Crime.class, id);
 
 		// boilerplate session end, no specific business logic for my CRUD operation
-		ses.close();
+//		ses.close();
 		
 		return crime;
 	}
@@ -74,7 +74,7 @@ public class CrimeDaoImpl {
 				ses.createQuery("from Crime", Crime.class).list();
 
 		// boilerplate session end, no specific business logic for my CRUD operation
-		ses.close();
+//		ses.close();
 		
 		return crimeList;
 	}

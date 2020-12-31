@@ -49,7 +49,7 @@ public class VillDaoImpl implements VillDao {
 
 		// boilerplate session end, no specific business logic for my CRUD operation
 		tx.commit();
-		ses.close();
+//		ses.close();
 	}
 
 	@Override
@@ -63,7 +63,7 @@ public class VillDaoImpl implements VillDao {
 
 		// boilerplate session end, no specific business logic for my CRUD operation
 		tx.commit();
-		ses.close();
+//		ses.close();
 
 	}
 
@@ -78,7 +78,7 @@ public class VillDaoImpl implements VillDao {
 
 		// boilerplate session end, no specific business logic for my CRUD operation
 		tx.commit();
-		ses.close();
+//		ses.close();
 
 	}
 
@@ -91,7 +91,7 @@ public class VillDaoImpl implements VillDao {
 		SuperVillain supe = ses.get(SuperVillain.class, id);
 
 		// boilerplate session end, no specific business logic for my CRUD operation
-		ses.close();
+//		ses.close();
 		
 		return supe;
 	}
@@ -120,7 +120,7 @@ public class VillDaoImpl implements VillDao {
 		
 		
 		// boilerplate session end, no specific business logic for my CRUD operation
-		ses.close();
+//		ses.close();
 		
 		if(villList.size()==0) {
 			System.out.println("PANIC!!!!!");
@@ -141,7 +141,7 @@ public class VillDaoImpl implements VillDao {
 				ses.createQuery("from SuperVillain", SuperVillain.class).list();
 
 		// boilerplate session end, no specific business logic for my CRUD operation
-		ses.close();
+//		ses.close();
 		
 		return villList;
 	}

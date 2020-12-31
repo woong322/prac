@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class SuperVillain {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="svill_id")
 	private int svillId;
 	
@@ -36,7 +36,7 @@ public class SuperVillain {
 	 * Proxy objects are PRETENDING to be the actual data you need, but they are
 	 * ACTUALLY empty. BUT if you attempt to access the information that the proxy
 	 * is in charge of then the proxy will SECRETLY go back to the DB and get
-	 * the information that you need as if it LAWAYS had the information.
+	 * the information that you need as if it ALWAYS had the information.
 	 * 
 	 * In short, a proxy object is a placeholder for a future set of information
 	 * (similar to a promise)
@@ -44,7 +44,7 @@ public class SuperVillain {
 	 * FetchType.Eager then Hibernate will IMMEDIATELY go to teh database
 	 * and get this information. No proxy is involved.
 	 */
-	@ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Crime> crimes;
 	
 	/*

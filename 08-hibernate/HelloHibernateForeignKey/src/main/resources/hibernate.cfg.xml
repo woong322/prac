@@ -61,7 +61,7 @@
  		you'll want to search out a dependency that is more powerful than the built in
  		connection pool.
  		  -->
-		<property name="hibernate.connection.pool_size">1</property>
+		<property name="hibernate.connection.pool_size">5</property>
 		
 		
 		<mapping class ="com.example.model.SuperVillain"/>
