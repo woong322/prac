@@ -106,11 +106,33 @@ save(obj8)
 persist(obj8)
 	will return void
 
+-------------
+
+ANOTHER NOTE FOR HIBERNATE, dealing with exceptions
+
+When your application thorws an exception, HIbernate will rollback
 
 
+------------------
+types of concurrency issues?
+-lost update
+-dirty read
+-unrepeatable read
+-phantom read
 
+these exist in hibernate when ealing with sesions & caches....but they are NOT specific to
+HIbernate. These issues exist with DBs in general as well as other type of concurrency.
 
+How do we defeat concurrency issues?
+-we use isolation levels
+- https://media.geeksforgeeks.org/wp-content/cdn-uploads/transactnLevel.png
+-isolation levels work with limiting who has access to certain pockets of data
 
+-----
+ANOTHER NOTE FOR HIBERNATE, dealing with lost updates
+
+Hibernate has what's called "Automatic Dirty Checking" and this feature guards against
+lost updates
 
 
 
