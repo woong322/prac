@@ -65,7 +65,7 @@
 		
 		
 		<mapping class ="com.example.model.SuperVillain"/>
-		
+		<mapping class ="com.example.model.Crime"/>
 	</session-factory>
 
 </hibernate-configuration>
