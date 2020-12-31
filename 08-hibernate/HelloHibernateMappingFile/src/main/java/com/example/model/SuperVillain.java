@@ -20,22 +20,22 @@ import javax.persistence.Table;
  * the future if we want to change ORM framework we don't have to use
  * different annotations. We can simply switch out the framework itself.
  */
-@Entity
-@Table(name="Hibernate_SuperVillain")
+//@Entity
+//@Table(name="Hibernate_SuperVillain")
 public class SuperVillain {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="svill_id")
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.AUTO)
+//	@Column(name="svill_id")
 	private int svillId;
 	
-	@Column(name="name", nullable=false, unique=true)
+//	@Column(name="name", nullable=false, unique=true)
 	private String name;
 	
-	@Column(name="superpower")
+//	@Column(name="superpower")
 	private String superpower;
 	
-	@Column(name="bounty")
+//	@Column(name="bounty")
 	private int bounty;
 	
 	/*
