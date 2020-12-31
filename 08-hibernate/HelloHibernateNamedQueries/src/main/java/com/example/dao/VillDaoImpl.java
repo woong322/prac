@@ -46,7 +46,7 @@ public class VillDaoImpl implements VillDao {
 
 		// NOW, let's get to our business logic
 		ses.save(superVillain);
-		
+
 		// boilerplate session end, no specific business logic for my CRUD operation
 		tx.commit();
 		ses.close();
@@ -101,21 +101,9 @@ public class VillDaoImpl implements VillDao {
 		// boilerplate session start, no specific business logic for my CRUD operation
 		Session ses = HibernateUtil.getSession();
 		
-		//HQL- HIBERNATE QUEERY LANGUAGE
-//		List<SuperVillain> villList = ses.createQuery("from SuperVillain where"
-//				+ " name='"+name+"'", SuperVillain.class).list();
-		
-		
-		//CRITERIA   (note: criteria is deprecated, you should look into "CriteriaBuilder")
-//		List<SuperVillain> villList = ses.createCriteria(SuperVillain.class)
-//				.add(Restrictions.ilike("name", name)).list();
-		//I normally use the deprecated version for the demo BECAUSE the CriteriaBuilder
-		//  takes like 7lines of code to do the same thing.
-		
-		
-		//NATIVE SQL
-		List<SuperVillain> villList = ses.createNativeQuery("select * from Hibernate_SuperVillain "
-				+ "where name='"+name+"'", SuperVillain.class).list();
+		//THIS is how you access a Named Query
+		List<SuperVillain> villList =
+				ses.getNamedQuery("HQL_GET_VILLAIN_BY_NAME").list();
 		
 		
 		
@@ -138,7 +126,7 @@ public class VillDaoImpl implements VillDao {
 		// NOW, let's get to our business logic
 		//using HQL
 		List<SuperVillain> villList=
-				ses.createQuery("from SuperVillain", SuperVillain.class).list();
+				ses.getNamedQuery("HQL_GET_ALL").list();
 
 		// boilerplate session end, no specific business logic for my CRUD operation
 		ses.close();
