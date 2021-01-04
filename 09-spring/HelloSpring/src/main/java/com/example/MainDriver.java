@@ -12,6 +12,13 @@ import com.example.service.VillServiceImpl;
  * -In other words, ApplicationContext is a child of BeanFactory
  * -ApplicationContext adds some additional functionality to the normal BeanFactory, for example:
  * 		-internalization and text messaging
+ * 
+ *  * Common Spring Exceptions:
+ * 	BeanCreationException
+ * 	NoSuchBeanDefinitionException,
+ * 	UnsatisfiedDependencyException
+ * 	XmlBeanDefinitionStoreException
+ * 	NoUniqueBeanDefiniteionException
  */
 public class MainDriver {
 	

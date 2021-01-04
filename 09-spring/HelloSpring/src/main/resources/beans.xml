@@ -29,6 +29,21 @@
 						(client side)
 		-GlobalSession	>>> says that a single instance of that bean will exist for the ENTIRE SessionFactory
 							(deprecated)
+ 
+ 	INJECTION VS AUTOWIRING
+	INjection is simply a method of giving an object its dependencies
+	It is NOT specific to Spring.
+		"HOW do I get the object their dependencies?"
+		ex: setter injection or constructor injection
+	Autowiring is when Spring (or another framework) scans yor objects to determine
+	WHICH dependencies it needs.
+		"WHAT dependencies do the objects need?"
+		ex: byName, byType, constructor
+		
+		
+	Cooking example:
+		Autowiring is like "Reading the recipe to figure out WHICH ingredients to use"
+		Injection is like "Putting the ingredients into the food"
  -->
  
  <!-- THIS IS SETTER INJECTION  (This is a type of manual wiring)-->
@@ -83,6 +98,9 @@
  			
  		"constructor" works similar to byName, except it injects using the constructor. If the byName
  			strategy fails then the "constructor" setting will turn to the byType strategy.
+ 			
+ 			
+ 			Note: you CAN mix and match manual and auto wiring
  -->
  <!-- <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
  <bean name="villDaoSECOND" class="com.example.repository.VillDaoImpl"></bean>
@@ -94,12 +112,24 @@
  	
  	
  	
- 	
+ 	<!-- annotations without stereotypes  -->
  <!-- THIS line turns on spring's context module annotations -->
- <context:annotation-config/>
+ <!-- <context:annotation-config/>
  
  <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
- <bean name="villServFIRST" scope="singleton" class="com.example.service.VillServiceImpl"/>
+ <bean name="villServFIRST" scope="singleton" class="com.example.service.VillServiceImpl"/> -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <context:annotation-config/>
+ <context:component-scan base-package="com.example.repository"/>
+ <context:component-scan base-package="com.example.service"/>
  
  
 </beans>

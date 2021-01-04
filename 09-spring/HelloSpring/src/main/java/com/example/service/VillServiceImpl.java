@@ -3,6 +3,7 @@ package com.example.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.model.SuperVillain;
 import com.example.repository.VillDao;
@@ -49,6 +50,7 @@ import com.example.repository.VillDao;
  * ^THIS is the idea of Dependency Injection (DI)
  * >>>>DI is a type of design pattern
  */
+@Service("villServFIRST")
 public class VillServiceImpl implements VillService {
 
 	///////////STATIC MEMBERS
@@ -68,8 +70,21 @@ public class VillServiceImpl implements VillService {
 	//private VillDao villDao = new VillDaoImpl();
 	
 	//WITH Dependency Injection
+	@Autowired
 	private VillDao villDao; //right now this value is "null"
 	private VillDao villDaoTwo;
+	/*
+	 * Using @Autowired on the field itself will make Spring use "Field INjection"
+	 * (Field INjection uses the Reflection API to put data DIRECTLY into the variable)
+	 * 
+	 * HOWEVER, field injection is bad practice for a variety of reasons.
+	 * Including:
+	 * 	-the lack of encapsulation
+	 * 	-you're not able to trigger additional setter or constructor logic
+	 * 	-you'd tightly couple your application to the Spring IoC container
+	 * 		(not all frameworks allow you to field inject)
+	 */
+	
 	
 	//////////BUSINESS LOGIC METHODS
 	@Override
@@ -82,7 +97,7 @@ public class VillServiceImpl implements VillService {
 		System.out.println("In the service no arg constructor");
 	}
 
-	@Autowired //uses "byName" and if that doesn't work then "byType"
+	//@Autowired //uses "byName" and if that doesn't work then "byType"
 	public VillServiceImpl(VillDao villDao) {
 		super();
 		System.out.println("In the service 1 arg constructor");
