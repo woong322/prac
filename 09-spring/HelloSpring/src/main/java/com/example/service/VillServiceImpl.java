@@ -2,9 +2,10 @@ package com.example.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.example.model.SuperVillain;
 import com.example.repository.VillDao;
-import com.example.repository.VillDaoImpl;
 
 /*
  * EXPLANATION OF WHY THIS IS TIGHTLY COUPLED CODE:
@@ -81,6 +82,7 @@ public class VillServiceImpl implements VillService {
 		System.out.println("In the service no arg constructor");
 	}
 
+	@Autowired //uses "byName" and if that doesn't work then "byType"
 	public VillServiceImpl(VillDao villDao) {
 		super();
 		System.out.println("In the service 1 arg constructor");
@@ -98,7 +100,8 @@ public class VillServiceImpl implements VillService {
 		return villDao;
 	}
 
-	public void setVillDao(VillDao villDao) {
+	//@Autowired //uses "byType" and if that doesn't work then "byName"
+	public void setVillDaoFIRST(VillDao villDao) {
 		System.out.println("In the service setter ONE");
 		this.villDao = villDao;
 	}

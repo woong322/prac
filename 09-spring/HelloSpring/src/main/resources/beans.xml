@@ -31,7 +31,7 @@
 							(deprecated)
  -->
  
- <!-- THIS IS SETTER INJECTION -->
+ <!-- THIS IS SETTER INJECTION  (This is a type of manual wiring)-->
  <!-- <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
  <bean name="villDaoSECOND" class="com.example.repository.VillDaoImpl"></bean>
  
@@ -44,7 +44,7 @@
  
  
  
- <!-- THIS IS CONSTRUCTOR INJECTION -->
+ <!-- THIS IS CONSTRUCTOR INJECTION  (This is a type of manual wiring) -->
  <!-- <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
  
  <bean name="villServFIRST" class="com.example.service.VillServiceImpl">
@@ -68,10 +68,38 @@
  
 
 
- 
- <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
+
+ <!-- AUTOWIRING (automatic bean wiring) 
+ 	Autowiring modes:
+ 		"no" autowiriing means spring will NOT autowire anything. This is also the default setting
+ 		
+ 		"byType" means spring will autowire by looking at the class' field datatypes, then match those
+ 			datatypes to the datatypes of beans already in the IoC container. It then uses setter
+ 			injection to inject the beans.
+ 			
+ 		"byName" means spring will autowire by looking at the class' field variable names, then match
+ 			those variable names to bean names already in the IoC container. It then uses setter
+ 			injection to inject the beans.
+ 			
+ 		"constructor" works similar to byName, except it injects using the constructor. If the byName
+ 			strategy fails then the "constructor" setting will turn to the byType strategy.
+ -->
+ <!-- <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
+ <bean name="villDaoSECOND" class="com.example.repository.VillDaoImpl"></bean>
  
  <bean name="villServFIRST" scope="singleton" class="com.example.service.VillServiceImpl"
- 	autowire="byName"/>
+ 	autowire="constructor"/> -->
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ <!-- THIS line turns on spring's context module annotations -->
+ <context:annotation-config/>
+ 
+ <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
+ <bean name="villServFIRST" scope="singleton" class="com.example.service.VillServiceImpl"/>
+ 
  
 </beans>
