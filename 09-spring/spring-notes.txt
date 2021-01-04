@@ -1,0 +1,22 @@
+>>>>>>>What is SPRING????
+	>Spring is a module based, open source, java AOP framework.
+	>It provides support for enterprise level applications; it provides infrastructure
+	so you can focus on your application's business logic.
+	(also, AOP is "Aspect Oriented Programming")
+
+
+>>>What is a module?
+	>A grouping of libraries that work together to achieve some goal using
+	reusuable abstracted code.
+	>In Spring, a module will take the form of a dependency (in our case, a maven
+	dependency)
+	>spring modules:
+	   >>>core, beans, context, orm, aop, webmvc, security, test, etc
+	>here is a diagram of spring's modules:
+		https://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/html/images/spring-overview.png
+
+>>>HOW does Spring achieve its goals? Aka what features does spring have?
+	>Inversion of Control (IoC)
+	>Aspect Oriented Programming (AOP)
+	>Model View Controller Design Pattern (MVC)
+	>a TON of astracted APIs
