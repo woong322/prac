@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- 
+	What is a spring bean?
+	A spring bean is an object that you've told spring to manage for you.
+	It is NOT the same thing as a Java Bean. A spring bean could be a java bean OR a java POJO
+	
+	What is bean wiring?
+	Beanwiring is the process of telling spring to manage an object(s) for you,
+	ALSO defining what dependencies those objects may have.
+	
+	Types of Injection:
+		-Constructor
+		-Setter
+		-Field
+		-Interface      <-not possible in Spring
+		
+	Scopes of a Spring Bean?
+		-Singleton (the default) >>>tells spring to ONLY ever make one instance.
+		-Prototype	>>>tells spring that WHENEVER someone asks for that bean THEN create
+			ANOTHER instance.
+		-Request	>>> says that a new instance of that bean will be created for EVERY new Http request
+		-Session	>>> says that a new instance of that bean will be created for EVER new web session
+						(client side)
+		-GlobalSession	>>> says that a single instance of that bean will exist for the ENTIRE SessionFactory
+							(deprecated)
+ -->
+ 
+ <!-- THIS IS SETTER INJECTION -->
+ <!-- <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
+ <bean name="villDaoSECOND" class="com.example.repository.VillDaoImpl"></bean>
+ 
+ <bean name="villServFIRST" scope="singleton" class="com.example.service.VillServiceImpl">
+ 	<property name="villDao" ref="villDaoFIRST"></property>
+ 	<property name="villDaoTwo" ref="villDaoSECOND"></property>
+ </bean> -->
+ 
+ 
+ 
+ 
+ 
+ <!-- THIS IS CONSTRUCTOR INJECTION -->
+ <!-- <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
+ 
+ <bean name="villServFIRST" class="com.example.service.VillServiceImpl">
+ 	<constructor-arg index="1" ref="villDaoFIRST"></constructor-arg>
+ 	<constructor-arg index="0" type="int" value="5"></constructor-arg>
+ </bean> -->
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- AND YES, WE CAN MIX AND MATCH CONSTRUCTOR AND SETTER INJECTION -->
+ <!-- <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
+ 
+ <bean name="villServFIRST" scope="singleton" class="com.example.service.VillServiceImpl">
+ 	<constructor-arg index="0" ref="villDaoFIRST"></constructor-arg>
+ 	<property name="villDaoTwo" ref="villDaoFIRST"></property>
+ </bean> -->
+ 
+ 
+
+
+ 
+ <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
+ 
+ <bean name="villServFIRST" scope="singleton" class="com.example.service.VillServiceImpl"
+ 	autowire="byName"/>
+ 
+</beans>

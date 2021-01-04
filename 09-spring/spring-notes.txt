@@ -20,3 +20,12 @@
 	>Aspect Oriented Programming (AOP)
 	>Model View Controller Design Pattern (MVC)
 	>a TON of astracted APIs
+
+
+>>>What IS Inversion of Control (IoC)?
+	>It is giving up control of some process to another entity.
+
+>>What is the difference between IoC and DI?
+	>DI is a SUBSET of IoC
+	>Or to put it another way, DI is a specific TYPE of IoC
+	>DI is SPECIFIC inverting control of your dependency's lifecycle
