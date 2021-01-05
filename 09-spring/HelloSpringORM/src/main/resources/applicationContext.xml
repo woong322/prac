@@ -9,9 +9,14 @@
 
 	<!-- Turning on context annotations -->
 	<context:annotation-config/>
-	<!-- Package scanning. -->
+	<!-- Package scanning. 
+		You can use "com" as your base package to scan the "com" package and all subpackages of "com"
+		If you leave the base-package as an empty string Spring will throw an exception
+	-->
 	<context:component-scan base-package="com"/>
-
+	
+	<!-- Turn on transaction annotations (Spring ORM) -->
+	<tx:annotation-driven/>
 	
 	<!-- DATASOURCE 
 		Datasource is an object that holds all the attributes necessary to connect
@@ -27,7 +32,9 @@
 		<property name="password" value="#{systemEnvironment['TRAINING_DB_PASSWORD']}"/>
 	</bean>
 	
-	<!-- SESSION FACTORY -->
+	<!-- SESSION FACTORY 
+		SessionFactory is an object that is responsible for creating Hibernate sessions
+	-->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
@@ -44,7 +51,14 @@
 		</property>
 	</bean>
 	
-	<!-- TRANSACTION MANAGER -->
+	<!-- TRANSACTION MANAGER
+		This bean is responsible for managing your transactions (big surprise)
+		AND also manages our contextual sessions
+		
+		What are contextual sessions?
+			Session with information SPECIFIC to each user. They make it so that
+			each user ONLY SEES THEIR INFORMATION, not someone else's.
+	 -->
 	
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
