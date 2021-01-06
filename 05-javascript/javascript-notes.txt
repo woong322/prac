@@ -5,6 +5,7 @@ mywebsite.net/api/{myModel}
 
 //select all (GET http method)
 mywebsite.net/api/rebursement
+
 //select speicific id (GET http method)
 mywebsite.net/api/rebursement/{id}
 mywebsite.net/api/rebursement/id/{id}
