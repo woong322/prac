@@ -1,5 +1,7 @@
 package com.example;
 
+import java.io.FileNotFoundException;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -11,11 +13,15 @@ public class MainDriver {
 		
 		MyAppProxy app = appCon.getBean("appProxy", MyAppProxy.class);
 		
-		app.drawCartoon('5', 5, 10);
+		app.drawCartoon(5, 10, '5');
 		app.drawAnime(5);
 		app.drawNature();
 		app.drawSpace();
-		app.sculptPottery();
+		try {
+			app.sculptPottery();
+		} catch (Throwable e) {
+			//e.printStackTrace();
+		}
 
 	}
 
