@@ -24,6 +24,15 @@ public interface FoodDao extends CrudRepository<Food,Integer> {
 	 * 
 	 * 
 	 * LOOK AT THE DOCUMENTATION FOR SPRING DATA HERE, IT HAS THE NAMING CONVENTIONS:
+	 * 
 	 * https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * ALSO, there are other repositories that you have available:
+	 * 
+	 * https://www.baeldung.com/spring-data-repositories
 	 */
 }
