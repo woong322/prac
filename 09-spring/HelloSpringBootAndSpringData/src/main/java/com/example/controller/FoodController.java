@@ -21,7 +21,7 @@ public class FoodController {
 	
 	@GetMapping("/allFood")
 	public List<Food> findAllFood(){
-		return null;
+		return foodDao.findAll();
 	}
 	
 	
