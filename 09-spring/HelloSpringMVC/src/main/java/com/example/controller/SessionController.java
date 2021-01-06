@@ -17,7 +17,7 @@ public class SessionController {
 	/*
 	 * (look into Spring Filters - they are middleware)
 	 * 
-	 * Spring can inject a variety of object ins your controlelr methods
+	 * Spring can inject a variety of object ins your controller methods
 	 * ASSUMING you declare a parameter for said object. For example:
 	 * HttpSession, HttpServletRequest, HttpServletResponse, ModelAndView, etc
 	 */
