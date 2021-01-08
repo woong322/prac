@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- Turning on context annotations -->
+	<context:annotation-config/>
+	<!-- Package scanning. 
+		You can use "com" as your base package to scan the "com" package and all subpackages of "com"
+		If you leave the base-package as an empty string Spring will throw an exception
+	-->
+	<context:component-scan base-package="com"/>
+	
+	<!-- Turn on transaction annotations (Spring ORM) -->
+	<tx:annotation-driven/>
+	
+	<!-- DATASOURCE 
+		Datasource is an object that holds all the attributes necessary to connect
+		to your database
+	-->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		
+		<property name="driverClassName" value="org.postgresql.Driver"/>
+		<property name="url" value=
+			"#{'jdbc:postgresql://'+systemEnvironment['TRAINING_DB_URL']+'/foodDB'}"/>
+		<property name="username" value="datachan"/>
+		<property name="password" value="#{systemEnvironment['TRAINING_DB_PASSWORD']}"/>
+	</bean>
+	
+	<!-- SESSION FACTORY 
+		SessionFactory is an object that is responsible for creating Hibernate sessions
+	-->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="packagesToScan" value="com.example.model"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.PostgreSQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- TRANSACTION MANAGER
+		This bean is responsible for managing your transactions (big surprise)
+		AND also manages our contextual sessions
+		
+		What are contextual sessions?
+			Session with information SPECIFIC to each user. They make it so that
+			each user ONLY SEES THEIR INFORMATION, not someone else's.
+	 -->
+	
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>	
+	</bean>
+</beans>

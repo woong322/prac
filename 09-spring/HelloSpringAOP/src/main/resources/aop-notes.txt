@@ -1,0 +1,25 @@
+What are Cross Cutting Concerns (CCCs)?
+	-A CCC is meta logic that an application needs, that is independent of
+	business logic. In other words, logic that EVER applications needs before
+	you consider this applications SPECIFIC needs.
+	-CCCs are considered "boilerplate code"
+	-CCCs are NECESSARY for the application
+	
+What are some examples of Cross Cutting Concerns in a web application?
+	-transactions
+	-caching
+	-exception
+	-logging
+	-security
+	(and perhaps testing as well)
+
+
+What is Aspect Oriented Programming (AOP)?
+-Is the process of modularizing your cross cutting concerns.
+
+What is an Aspect?
+-It's a modularization of CCCs.
+
+
+
+

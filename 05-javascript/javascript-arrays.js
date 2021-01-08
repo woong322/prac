@@ -177,7 +177,7 @@ let newMapArray = mapArray.map(
             return myValue*2;
         }
     );
-// console.log(newMapArray);
+// console.log(newMapArray); // [14, 16, 18]
 // console.log(mapArray); //doesn't change the original array
 
 

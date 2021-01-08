@@ -134,4 +134,16 @@ SELECT * FROM get_rid_of_annoyance_view;
 */
 
 
+DROP VIEW super_human_power_join ;
 
+CREATE VIEW super_human_power_join AS
+SELECT *
+FROM superhumans A
+INNER JOIN shuman_spower_junction B
+ON A.shuman_id = B.my_shuman_id
+INNER JOIN superpowers C
+ON C.spower_id = B.my_spower_id;
+
+
+SELECT * FROM super_human_power_join shpj ;
+SELECT * FROM super_human_power_join shpj WHERE shuman_id =1;

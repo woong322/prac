@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+        
+        
+        
+<hibernate-mapping package="com.example.model">
+	<class name="SuperVillain" table="SuperVillain">
+		<meta attribute="description">
+			Describe some stuff or whatever
+		</meta>
+		
+		<!-- PRIMARY KEY -->
+		<id name="svillId" type="int" column="svill_id">
+			<generator class="native"/>
+		</id>
+		
+		<!-- PROPERTIES -->
+		<property name="name" type="string">
+			<column name="name" not-null="true" unique="true"/>
+		</property>
+		<property name="superpower" column="superpower" type="string"/>
+		<property name="bounty" column="bounty" type="int"/>
+	</class>
+	
+	<!-- IF YOU WANT TO SEE AN EXAMPLE OF A MORE COMPLEX HBM FILE
+	https://www.javacodegeeks.com/2015/12/one-many-xml-mapping-hibernate.html
+	
+	
+	https://imgs.xkcd.com/comics/compiling.png
+	 -->
+</hibernate-mapping>

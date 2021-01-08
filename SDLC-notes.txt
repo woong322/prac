@@ -1,0 +1,92 @@
+SDLC -  SOFTWARE DEVELOPMENT LIFECYCLE
+The process of taking an idea and turning it into a full product.
+------------------------------
+
+Let's take about two SDLCs specifically: waterfall & AGILE
+
+
+---
+Let's take a look at waterfall first:
+https://www.w3schools.in/wp-content/uploads/2019/02/SDLC-Waterfall-Model.png
+
+Issues with waterfall?
+-What happens if you finish implemention and during testing you find out the whole system is shaky, and not scalable.
+-What happens if you finish the entire product and find out you misunderstood the product owner.
+-what happens if you finish the entire product and you find out that the market has shifted and the product is no longer viable?
+
+How do we fix this issue?
+-more frequent feedback. Instead of waiting until the whole product is completed, we can get feedback from management and the product owner more frequently so that we may course correct.
+
+---
+Now, let's take a look at Agile SCRUM (SCRUM is a specific implementation of Agile methodologies)
+https://cdn.educba.com/academy/wp-content/uploads/2019/03/scrum-1.png
+
+
+SCRUM uses 1-4 week sprints to develop applications (most often 2 weeks).
+EACH sprint is itself a miniature waterfall model. We reiteracte sprints until the product is completed.
+
+------
+What is a USER STORY?
+-it's essentially a granular/atomic business requirement written out in a sentence so that all parties involved (even non-devs) can understand what the requirements are.
+
+A user story is structured like:
+	As a [ROLE], I can [ACTION] so that [RESULT]
+
+Example:
+	As an Admin, I can approve a reimbursement so that employees can get refunds.
+Example 2:
+	As a user, I can modify my credit card information so that I can continue to make purchases.
+
+Each user story will have a weight to it. For example, a userstory could have a weight of "2 hours" or "4 hours". Dont' make the weights things like "4.89 hours"; try to round to reasonable nubmers like 1 hour, 2 hours, 4 hours, 8 hours, 2 days, and so on.
+
+From this point we know how many devs are on the team, and we know the amount of working hours each dev has in a week. SO we can reasonably calculate how long the product will take to implement.
+
+-----
+SCRUM actors:
+	-Product Owner-	  -Business Analysts-      -SCRUM MASTER-    -The Dev Team-
+     The idea person	translator for dev team    Servant Leader    Their the dev team.....?
+
+(note: scrum master is tasked with keeping the team on track and making sure they have all the resources they ened to be successful. They are NOT the boss.)
+
+(note: business analysts [BAs] are tasked with translating the product owner's ideas into user stories that the dev team can follow)
+
+------
+SCRUM documents:
+	-Product Backlog-		-Sprint Backlog-		-Burndown Chart-
+
+The product backlog is a list of ALL of the features of the ENTIRE application. Your Business Analysts (BAs) will sit with the Product Owner and the Dev Team and translate all of the business requirements into USER STORIES so that the dev team can begin implementation.
+
+If the product backlog is a list of ALL userstories in the entire application, then the sprint backlog is a list of USER STORIES that the team plans on implementing during this sprint. At the beginning of each sprint you will meet with the team to determine the highest priority user stories and craft a reasonably sized sprint.
+
+
+Example of a burndown chart:
+https://upload.wikimedia.org/wikipedia/commons/8/8c/Burn_down_chart.png
+
+The burndown chart velocity will give you an idea of WHEN you will complete the project; whether it's ahead of time...or worse...behind schedule.
+
+------------
+SCRUM ceremonies/meetings:
+	-Sprint Planning-	-Daily Standup/SCRUM-		-Sprint Review/Retrospective-
+
+The sprint planning is when you plan the sprint backlog. It's the meeting at the beginning of EACH sprint to make sure you execute a sprint in an organized fashion.
+
+The daily standup is a QUICK daily meeting with your entire team. You need to tell the team what you've done since the last daily meeting, what you plan on doing today, and if you have any BLOCKERS.
+
+(A blocker is an issue that prohibits you from making ANY future progress.)
+
+
+The sprint review is when oy bring in the product owner and review the product and all the implemented features. The product should be in a potentially shippable state by this point in time. (The focus here is the product and the product owner)
+
+The sprint retrospective is focused on the team. After the product owner leaves your team nees to figure out what things WORKED for you all...and what things DIDN'T work, so that you can learn from the mistakes and course correct. (example: the git repository flow is slowing down the productivity by a significant margin, we need to modify the process)
+
+
+----
+trello may be useful for keeping track of usertories and organizing with your team:
+https://trello.com/en-US
+
+
+
+
+
+
+

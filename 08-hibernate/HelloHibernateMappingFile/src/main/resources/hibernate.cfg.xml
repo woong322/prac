@@ -1,0 +1,65 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+<hibernate-configuration>
+	<session-factory>
+		<!-- Java DataBase Connectivity (JDBC) stuff -->
+		<property name="hibernate.connection.username">datachan</property>
+		
+		<property name="hibernate.connection.driver_class">
+			org.postgresql.Driver
+		</property>
+		
+		<!-- ADDITIONAL hibernate options -->
+		<property name="hibernate.connection.dialect">
+			org.hibernate.dialect.PostgreSQLDialect
+		</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.format_sql">false</property>
+		
+		<!-- What are settings for hbm2ddl.auto
+ 		
+ 		CREATE drops all existing tables & other objects with names you have
+ 			provided in annotations, then hibernate will create your
+ 			schema from scratch.
+ 			(THIS IS NOT PARTICULARLY GREAT FOR PRODUCTION!!!! This is used
+ 			for Dev purposes)
+ 			
+ 		VALIDATE hibernate checks to make sure the schema exists as expected
+ 		before operating.
+ 		
+ 		UPDATE hibernate will NOT delete anything, it'll only add/modify existing
+ 		schema elements, so that schema works with hiberna's schema
+ 		
+ 		NONE well...it means hibernate won't do anything to your schema
+ 			automatically
+ 		
+ 		 -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		
+		
+		<!--HIbenrate ALSO has connection pooling.
+ 		A method of speeding up database calls.
+ 		HIbernate will create 10 connections to the database when it starts
+ 		up and everytime you create a session, the session will "borrow"
+ 		and active connection from the connection pool. When you close
+ 		a session the connection doesn't close....it simply frees up
+ 		for another session to use. This speeds up database interactions.
+ 		(the default pool_size is 20, btw)
+ 		lastly, the default connection pool in HIbernate is NOT meant for production applications.
+ 		you'll want to search out a dependency that is more powerful than the built in
+ 		connection pool.
+ 		  -->
+		<property name="hibernate.connection.pool_size">1</property>
+		
+		
+		<!-- THIS is how we wire an entity(table) using annotations -->
+		<!-- <mapping class ="com.example.model.SuperVillain"/> -->
+		
+		
+		<!-- THIS is how we wire and entity (table) using a mapping file -->
+		<mapping resource="SuperVillain.hbm.xml"></mapping>
+	</session-factory>
+
+</hibernate-configuration>

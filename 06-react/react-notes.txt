@@ -1,0 +1,108 @@
+What is ReactJS?
+>React is an opensourced javaScript Library. It was created and maintained by Facebook.
+>React primarily  deals with Rendering (including DOM Manipulation) and EventHandling.
+>React is also component based.
+
+Just for our information, what is Angular?
+>Angular is a frontend TypeScript based framework, maintained by Google.
+
+Both React and Angular are component based. What the heck am I talking about when i say "component based"?
+
+What is a component?
+>A component is a fragment of HTML, CSS, and JS. These things create a small modularized section of the webpage; from there components can be used like building blocks to create a page view.
+
+
+What is a SPA?
+>Single Page Application
+>this can be achieved in React and Angular by shuffling around components as opposed to going to an entirely new page.
+
+What is JSX?
+>JSX is a language that combines JS and XML syntax so it can transpile into valid JS.
+>>>It can make your React DOM manipulation tynax FAR FAR FAR cleaner to look at.
+>>>We'll use tools like "BabelJS" to transpile JSX into valid JS. While JSX can do XML, we'll be mainly using it for the HTML functionality.
+
+What is Babel?
+>Babel is a JS transpiler.
+>Let's go over to "BabelJS.io" in the browser so we can lay with JSX and Babel itself for a moment.
+
+Single Responsibility Principle?
+>Each component will responsible for ONE feature/task. Each of its behaviors will be focused in on completing
+    that one task. This allows your components to be more reusable and more modular.
+
+Component Lifecycle?
+> https://reactjs.org/docs/react-component.html
+> Belows are teh more commonly used lifecycle methods:
+
+Mounting
+    constructor()
+    render()
+    componentDidMount()
+Updating
+    render()
+    componentDidUpdate()
+Unmounting
+    componentWillUnmount()
+
+Error Handling (happens in the case of issues)
+
+note: there are some lesser used lifecycle hooks like "shouldComponentUpdate()"
+
+-------ENOUGH TALKING!!! LET'S TAKE A LOOK AT REACT!!!!----------
+THE FOLLOWING ARE TERMINAL COMMANDS
+
+To install react on your machine (it also install the CLI aka Command Line Interface):
+    "npm install -g create-react-app"  OR "npx create-react-app"
+To create a react project:
+    "create-react-app [custom-project-name]"
+Now do an "ls" in the console to see that a project folder has been created for your custom-project-name
+    "ls"
+Nagivate to your custom-project-name folder:
+    "cd [project-folder]"
+To start the project:
+    "npm start"
+The stop react from running in your terminal:
+    ctrl+c
+
+
+
+When we start React, it the starting page has a URL to the official website (that contains a tutorial):
+https://reactjs.org/
+
+do NOT push your node_modules to gitlab...please....PLEASE......
+https://i.redd.it/tfugj4n3l6ez.png
+
+BUT what happens if your coworker does a git pull without the dependencies?
+>the project won't work
+HOW do they get the dependencies then?
+>they navigate to the project folder then do a "npm install"
+>"npm install" will look at the current directory's "package.json" and download all those dependencies
+
+
+----Let's install ESLint
+To install ESLint into your project:
+    "npm install eslint --save-dev"
+To initialize ESLint
+    "./node_modules/.bin/eslint --init"
+    OR we can create a shortcut in our package.json:
+        package.json script:
+        "lintStart": "eslint --init"
+        run this terminal command:
+        "npm run lintStart"
+
+Now you can setup whatever linting rules you'd like.
+For this demo, i'll use the following options during the initialize process:
+-"to check syntax"
+-"JavaScript modules (import/export)"
+-"React"
+-"No"
+-"Browser" & "Node"       (there is an option for this, read the prompt)
+-"Popular style guide"
+-"AirBnB"
+-"JSON"
+-"yes" you want to install
+
+
+------install axios
+npm install axios
+
+> https://www.npmjs.com/package/axios

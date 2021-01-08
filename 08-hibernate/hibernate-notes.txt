@@ -1,0 +1,149 @@
+>>>>What is Hibernate?
+>Hibernate is an ORM and persistence framework?
+
+>>>>What is an ORM?
+>Object Relational Mapping. ORMs take objects in programming languages and translate
+	them into DB tables
+
+>>>>What is "persistence"?
+>storing your information/data in a form that is durable (so, in our DB)
+	>>Durable being one of our ACID properties, remember
+
+>>>>What are some benefits of Hibernate?
+>As developers, we no longer have to write complex sql queries.
+	>>Hibernate will peform LOTS of complexityy for us.
+
+>Hibernate is object oriented
+>HIbernate is fast for a variety of reasons:
+	>It has caching
+	>It uses connection pooling to minimize bottle necked speeds caused by creating
+		connections through the network.
+>Hibernate is modular. You're able to write code using hibernat and later switch sql languages entirely by simply changing out the driver you're using. No need to change your code base at all.
+
+
+
+>>>>>>let's talk about important classes and interfaces in Hibernate
+
+Configuration (class)
+Configuration's job is to gather information for the hibernate.cfg.xml file and use
+that information to create a SessionFactory object
+
+SessionFactory (interface)
+SessionFactory's job is to create sessions and store information on HOW to make connections to the database. Once it's configured it is immutable.
+
+Session (interface)
+Session manages the connection to your database and provides create, read, update, and delete operations.
+
+Transaction (interface)
+Transaction manages.....welll.....your transactions (and cache). Must be ACID.
+
+
+
+------------
+
+STATES OF AN OBJECT IN HIBERNATE
+(note: a session has a cache asociated with it )
+
+>Transient
+	The entity (object) is new and has NOT been/is NOT associated with any session
+	(or DB record)
+
+>Persistent
+	The entity IS currently apart of a session
+	[entities become apart of a session when you use session methods on those
+	entities: .save(obj), .update(obj), etc]
+
+>Detached
+	The entity WAS associated with a session HOWEVER the session is now closed
+
+
+-----
+HIBERNATE has TWO types of caching:
+
+>Level 1 (L1)
+	-Is setup by default. L1 caches are specific to a session.
+	-You do NOT have to configure this, it is the default setting
+
+>Level 2 (L2)
+	-L2 caches are scoped to the entire Session Factory. so all session
+		can access this data.
+	-In order to setup L2 caching you will need a third party provider.
+	-For example:
+		EHCache, JBossCache, SwarmCache, etc.
+	-These are dependencies you'll add to your pom.xml
+
+
+---------------------
+VARIOUS SESSION METHODS AND THEIR DIFFERENCES
+
+update(pkey18)
+	update will NOT allow you to update an object that is currently existing
+	in the session.
+	It'll protect you from lost updates
+
+merge(pkey18)
+	merge WILL allow you to update records/objects that are currently in
+	the session, so becareful lost updates are possible.
+	This is a tool that gives developers the ability to override if they
+	know what they are doing.
+
+---
+get(pkey6)
+	will go to the DB and retrieve the record
+	if the record doesn't exist then it will return null
+
+load(pkey6)
+	will return a PROXY object for you, and then the proxy will go to the
+	DB when you attempt to access the data.
+	if the record doesn't exist then it will throw an exception
+
+---
+save(obj8)
+	the return type of this object is a SERIALIZABLE object that represents
+	the uniue id of this object. If your PK is numeric, then the save() will return
+	an Integer object. You can use this unique id for future calculations if necessary
+
+persist(obj8)
+	will return void
+
+-------------
+
+ANOTHER NOTE FOR HIBERNATE, dealing with exceptions
+
+When your application thorws an exception, HIbernate will rollback
+
+
+------------------
+types of concurrency issues?
+-lost update
+-dirty read
+-unrepeatable read
+-phantom read
+
+these exist in hibernate when ealing with sesions & caches....but they are NOT specific to
+HIbernate. These issues exist with DBs in general as well as other type of concurrency.
+
+How do we defeat concurrency issues?
+-we use isolation levels
+- https://media.geeksforgeeks.org/wp-content/cdn-uploads/transactnLevel.png
+-isolation levels work with limiting who has access to certain pockets of data
+
+-----
+ANOTHER NOTE FOR HIBERNATE, dealing with lost updates
+
+Hibernate has what's called "Automatic Dirty Checking" and this feature guards against
+lost updates
+
+
+
+
+
+
+
+
+
+
+
+
+
+

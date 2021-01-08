@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- 
+	What is a spring bean?
+	A spring bean is an object that you've told spring to manage for you.
+	It is NOT the same thing as a Java Bean. A spring bean could be a java bean OR a java POJO
+	
+	What is bean wiring?
+	Beanwiring is the process of telling spring to manage an object(s) for you,
+	ALSO defining what dependencies those objects may have.
+	
+	Types of Injection:
+		-Constructor
+		-Setter
+		-Field
+		-Interface      <-not possible in Spring
+		
+	Scopes of a Spring Bean?
+		-Singleton (the default) >>>tells spring to ONLY ever make one instance.
+		-Prototype	>>>tells spring that WHENEVER someone asks for that bean THEN create
+			ANOTHER instance.
+		-Request	>>> says that a new instance of that bean will be created for EVERY new Http request
+		-Session	>>> says that a new instance of that bean will be created for EVER new web session
+						(client side)
+		-GlobalSession	>>> says that a single instance of that bean will exist for the ENTIRE SessionFactory
+							(deprecated)
+ 
+ 	INJECTION VS AUTOWIRING
+	INjection is simply a method of giving an object its dependencies
+	It is NOT specific to Spring.
+		"HOW do I get the object their dependencies?"
+		ex: setter injection or constructor injection
+	Autowiring is when Spring (or another framework) scans yor objects to determine
+	WHICH dependencies it needs.
+		"WHAT dependencies do the objects need?"
+		ex: byName, byType, constructor
+		
+		
+	Cooking example:
+		Autowiring is like "Reading the recipe to figure out WHICH ingredients to use"
+		Injection is like "Putting the ingredients into the food"
+ -->
+ 
+ <!-- THIS IS SETTER INJECTION  (This is a type of manual wiring)-->
+ <!-- <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
+ <bean name="villDaoSECOND" class="com.example.repository.VillDaoImpl"></bean>
+ 
+ <bean name="villServFIRST" scope="singleton" class="com.example.service.VillServiceImpl">
+ 	<property name="villDao" ref="villDaoFIRST"></property>
+ 	<property name="villDaoTwo" ref="villDaoSECOND"></property>
+ </bean> -->
+ 
+ 
+ 
+ 
+ 
+ <!-- THIS IS CONSTRUCTOR INJECTION  (This is a type of manual wiring) -->
+ <!-- <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
+ 
+ <bean name="villServFIRST" class="com.example.service.VillServiceImpl">
+ 	<constructor-arg index="1" ref="villDaoFIRST"></constructor-arg>
+ 	<constructor-arg index="0" type="int" value="5"></constructor-arg>
+ </bean> -->
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- AND YES, WE CAN MIX AND MATCH CONSTRUCTOR AND SETTER INJECTION -->
+ <!-- <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
+ 
+ <bean name="villServFIRST" scope="singleton" class="com.example.service.VillServiceImpl">
+ 	<constructor-arg index="0" ref="villDaoFIRST"></constructor-arg>
+ 	<property name="villDaoTwo" ref="villDaoFIRST"></property>
+ </bean> -->
+ 
+ 
+
+
+
+ <!-- AUTOWIRING (automatic bean wiring) 
+ 	Autowiring modes:
+ 		"no" autowiriing means spring will NOT autowire anything. This is also the default setting
+ 		
+ 		"byType" means spring will autowire by looking at the class' field datatypes, then match those
+ 			datatypes to the datatypes of beans already in the IoC container. It then uses setter
+ 			injection to inject the beans.
+ 			
+ 		"byName" means spring will autowire by looking at the class' field variable names, then match
+ 			those variable names to bean names already in the IoC container. It then uses setter
+ 			injection to inject the beans.
+ 			
+ 		"constructor" works similar to byName, except it injects using the constructor. If the byName
+ 			strategy fails then the "constructor" setting will turn to the byType strategy.
+ 			
+ 			
+ 			Note: you CAN mix and match manual and auto wiring
+ -->
+ <!-- <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
+ <bean name="villDaoSECOND" class="com.example.repository.VillDaoImpl"></bean>
+ 
+ <bean name="villServFIRST" scope="singleton" class="com.example.service.VillServiceImpl"
+ 	autowire="constructor"/> -->
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	<!-- annotations without stereotypes  -->
+ <!-- THIS line turns on spring's context module annotations -->
+ <!-- <context:annotation-config/>
+ 
+ <bean name="villDaoFIRST" class="com.example.repository.VillDaoImpl"></bean>
+ <bean name="villServFIRST" scope="singleton" class="com.example.service.VillServiceImpl"/> -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <context:annotation-config/>
+ <context:component-scan base-package="com.example.repository"/>
+ <context:component-scan base-package="com.example.service"/>
+ 
+ 
+</beans>
