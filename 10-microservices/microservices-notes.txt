@@ -1,0 +1,24 @@
+https://pbs.twimg.com/media/CgfUoHxWwAIXRMq.jpg
+
+What is a monolithic application?
+-A large application; where all features are implemented in a single application.
+
+
+Issues with monolithic applications?
+-Scaling
+	>what happens if we have an influx of traffic to only a single feature/service?
+	>we'll need to create another server with ALL features/services, making each
+		server unnecessarily heavy
+-Single Point of Failture
+	>what happens if a VERY infrequently used feature/service throws an exception?
+	>well, the whole application comes tumbling down unnecessarily
+-Singular Programming Language
+	>What if DIFFERENT features/services in your application could be optimized using
+	different programming languages?
+	>You can only choose one language in a monolith
+
+
+What is a microservice ecosystem?
+-A Microservice ecosystem is an implmentation of a Service Oriented Architecture; where
+	each service is an atomic feature belonging to the application.
+-It's like a SOA on a smaller level.

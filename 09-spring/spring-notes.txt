@@ -29,3 +29,18 @@
 	>DI is a SUBSET of IoC
 	>Or to put it another way, DI is a specific TYPE of IoC
 	>DI is SPECIFIC inverting control of your dependency's lifecycle
+
+
+
+>>Spring MVC design pattern
+> https://examples.javacodegeeks.com/wp-content/uploads/2017/09/spring-mvc-example-project-architecture-guide-2.jpg
+
+
+
+>>look into Spring Bean LifeCycle
+> https://howtodoinjava.com/spring-core/spring-bean-life-cycle/
+
+
+
+Spring Boot IS NOT A MODULE
+But Spring Data is

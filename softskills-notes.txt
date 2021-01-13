@@ -1,0 +1,66 @@
+>>>>>>>interview tips
+-body language
+-bad interations
+-dress
+
+
+
+>>>>>>>>>Why is the "unit test" question important?
+-Because you won't always know what questions you'll be asked in an actual interviews.
+-In modern times, jobs HIGHTLY value Criticial thinking, creating thinking, and logical thinking; and in this question they can get an idea of how you think.
+-example questions: "how would you unit test this window?", "if you were shrunk down and put into a blendder how would you escape?", "how tall is the building we're interviewing in right now?"
+
+
+
+
+
+>>>>>>>>>>>Why is "tell me about yourself" so important?
+-So the interviewer can see what type of person you are, and get an idea of your verbal softskills.
+-It's the FIRST question you'll be given, and there are NOT second "first impressions".
+-It's more difficult for the interviewer to start with a negative impression of you AND for you to have to climb your way back into "good standing" in the interviewer's eye....than it would be for you to maintain "good standing" if you started with positive first impressions. Because in their case, the interviewer will be looking for confirmation bias.
+-So normally you're pulled by the reins during the interview, the interviewER is asking all the question and guiding the topics of conversation. HOWEVER, with this question you're in FULL control of the conversation topics; which likely won't ever happen again. So NOW you have the opportunity to talk about topics that the interview didn't even realize that you had knowledge of. You could possibly change the ccourse of the entire interview that interviewer had planned.
+-this question you will get VERY OFTEN
+
+
+>>>>>>>>>>How are we supposed to answer "tell me about yourself" in our field?
+-YOu should be speaking between 30 and 60 seconds.
+	>IF you have a lot more you want to talk about after 60ish seconds, then ask them
+	if they'd like to hear more. (You can bait them into more details by ending with 
+	something like "I can go into more detail if you'd like?" or "would you like to
+	hear more about that project?")
+-Do NOT tell them about your hobbies and your personal life, that stuff will come later (because making yourself more human can be a good thing in the work place, especially when forming bonds with coworkers)
+-FOR NOW, this is the time to tell the about your professional persona.
+	1. INTRODUCE YOURSELF
+	2. MENTION EDUCATION AND CERTIFACTIONS
+		(degress and any certs)
+		>if you have a lot of certs, maybe mention the top 3ish
+		>this bullet point is to say "hey, I had institutions backing my knowledge"
+	3. CURRENT TITLE AND RESPONSIBILITIES
+		>mention what is expected of you in this position
+		>perhaps mention how long you've held that position IF it makes you
+			look more skilled
+		>this bullet point is to say "hey, I am actually hireable and I do all types
+			of stuff"
+	4. TALK ABOUT YOUR RECENT PROJECT(S) AND YOUR ROLE IN THAT  PROJECT
+		>do NOT say "I worked on project 2" or anything of that sort, they have
+			HAVE NO CLUE what project 2 is.
+		>mention the name of the project, and describe the project in a line or two,
+			they need context to know what it is you were working on
+		>then mention what role YOU had in the project, perhaps by mentioning
+			a few user stories you personally tackled
+		>this bullet point is to say "hey, here is a sample of what i'm capable of"
+	5. (optional) Describe some additional skills/traits that you have that would
+		possible benefit the team.
+		>(or even an interesting fact about yourself)
+		>example 1: mentioning other languages you speak, could be helpful
+		>example 2: mentioning being born and raised outside the US, could
+			be useful for localization projects
+		>example 3: mentioning the fact that you're a veteran could get you the job
+		>example 4: mentioning graphic design experience would be useful
+		>example 5: mentioning game design and working with physics engines and stuff
+			could be useful
+		>example 6: mentioning gamification in general could be VERY useful
+		>example 7: mentioning other professions that have skills that translate
+			>>I've had someone mention she was a journalists from Africa
+
+
