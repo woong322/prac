@@ -1,3 +1,10 @@
+This link may be handy for making spring boot projects quickly:
+https://start.spring.io/
+
+
+
+
+
 https://pbs.twimg.com/media/CgfUoHxWwAIXRMq.jpg
 
 What is a monolithic application?
@@ -22,3 +29,62 @@ What is a microservice ecosystem?
 -A Microservice ecosystem is an implmentation of a Service Oriented Architecture; where
 	each service is an atomic feature belonging to the application.
 -It's like a SOA on a smaller level.
+
+
+(side note: how do we solve sphaghetti code? WE MADE LASAGNA!! We layer our application and decouple it. BUT...Lasagna can be massive and unwieldy...perhaps...even monolithic....we now need to learn how to move to make RAVIOLI!!!)
+
+Issues with microservice ecosystems?
+-Increased Maintenance/upkeep (considering the entire ecosystem, it may be simplier for each individual service)
+-Complexity
+	>Separate Databases
+	>EAch service may need to talk to each other service
+	>LOTS of nonbusiness services:
+		>>Eureka (Service Registry)
+		>>Zuul (API Gateway)
+		>>Hystrix (Circuit Breaker)
+		>>Spring Cloud Config (Config Server)
+		>>RabbitMQ	(AMQP)
+
+
+
+A Microservice Ecosystem's transaction are NOT necessarily ACID...
+	>They violate the ACID principles because the state of the application is NOT
+	necessarily correct at any given time. Example, AMQPs cannot guarantee that your
+	request will be sent at any given time, they can just guarantee that your request
+	WILL get to its destination....EVENTUALLY......
+
+Wait, if transactions aren't ACID then what are they?
+>They are BASE
+
+-Basic Availability (BA)
+	>>When you want your data you can get your data. It's highly available
+-Soft State (S)
+	>>At any given point in time...you cannot guarantee that the state of your application
+		is correct
+-Eventual Consistency (E)
+	>>The state of the application will EVENTUALLY be correct. I don't know when...
+		but eventually
+
+
+Let me try to describe softstate in a bit more detail.
+
+Premise:
+	Assume the user has $50 in their bank account account,
+		and they'd like to withdraw $75
+
+ACID Example:
+
+	Step 1>		transaction requested -> transaction rejected because user doesn't
+						have enough money
+
+	At no point in time, did the DB go to a negative number
+
+BASE Example:
+
+	Step 1>		transaction requested -> DB goes to -$25
+	Step 2>		your ecosystem attempts to reach consistency, then rollsback the DB
+
+	At SOME point in time, the DB was at a negative number
+	What this means is....that there was a point where if the system queried the DB it
+	would have had incorrect information.	
+
