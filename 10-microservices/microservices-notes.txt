@@ -9,7 +9,7 @@ Issues with monolithic applications?
 	>what happens if we have an influx of traffic to only a single feature/service?
 	>we'll need to create another server with ALL features/services, making each
 		server unnecessarily heavy
--Single Point of Failture
+-Single Point of Failure
 	>what happens if a VERY infrequently used feature/service throws an exception?
 	>well, the whole application comes tumbling down unnecessarily
 -Singular Programming Language
