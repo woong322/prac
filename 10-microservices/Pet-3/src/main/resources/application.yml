@@ -1,0 +1,15 @@
+
+#PET-3'S CONFIG
+
+server:  port: 0
+  
+spring:  application:    name: pet-three
+    
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9999/eureka

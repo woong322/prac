@@ -8,4 +8,16 @@ eureka:  instance:    instance-id: ${spring.application.name}:${random.value}
   client:    fetch-registry: true
     register-with-eureka: true
     service-url:      defaultZone: http://localhost:9999/eureka
+      
+      
+      
+      
+zuul:  routes:    indignation:
+      path: /api/pets
+      service-id: pet-one
+      strip-prefix: true
+    nose:
+      path: /api/sound
+      service-id: pet-two
+      strip-prefix: false
     
