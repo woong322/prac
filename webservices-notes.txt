@@ -1,0 +1,201 @@
+>>>What is a service (in general)?
+>A functionality that is reusable, and accessible by other entities
+
+>>>What is a service (in software)?
+>A software that makes itself available for other softwares to use
+
+
+
+Issues with copying jar files from one project to another?
+-Update anomalies
+	>if the service updates its logic then i'll have to go find that new logic
+		else i'll have an outdate version of that functionality
+-Platform dependence
+	>what are you handing me a jar file when im using C#?
+	>what if I'm using an oracle DB and the service is using Postgresql?
+-Whatever datat the service gives us will require us to access the database
+	>which means the service either sent us the environment variable code that
+	we won't be able to use OR they sent the DB credentials...either is a
+	undesirable situation.
+...and the list goes on
+
+In short, copying jar files is NOT always the route we want to be taking.
+
+--------
+>>>What is a webservice?
+>A software that makes itself available for other softwares to use through the internet
+
+
+What are characteristics/qualities of a Webservice?
+-MUST be discoverable
+-MUST be self describing
+-MUST have a client-server interaction (aka a messaging system. requests & responses)
+
+
+There are two common types of Web Services:
+-REST - REpresentational State Transfer
+-SOAP - Simple Object Access Protocol
+
+REST is an architectual style, SOAP is a protocol
+----
+
+What is a Service Oriented Architecture (SOA)?
+-An application structured around using other applications as dependencies.
+-In other words, an application that has one or twoo webservices it relies on
+
+
+Benefits of SOAs and Webservices:
+-Modular Business Services
+	>the modularized functionality can be easily reused in other applications
+-Code Reusability (saving the company some cash)
+	>you no longer have to have multiple teams working on essentially the same products
+-Scalability
+-Language Independence (we can give each service the optimal platform/language)
+-with SOAs and Webservices also came:
+	>Standardized formats (xml, json, etc)
+	>Standardized transport (Http, TCP, etc)
+
+------
+What is REST?
+-REpresentational State Transfer
+-It's a type of web service
+-It commonly uses Http and Https in order to function/operate
+	>this is because a webservice must be self describing HOWEVER...if you
+	rely on a protocol that is WELL WELL WELL documented then new clients
+	won't have to leaern how to interact with your webservice.
+	>In short, REST piggybacks off of Http/Https
+-The dataformats that REST uses to transmit data are JSON or XML
+-
+
+
+--(for the HTTP messaging system see the diagram we've created
+	I'm referring to the Http Request & Response makeup)
+
+--Http Status Code--
+100s-informational
+200s-Success
+300s-Redirect
+400s-Client side Error
+500s-Server side Error
+
+---Http Methods
+Get-	Retrieve a resource (DEFAULT http method for your browser, can be bookmarked)
+Post-	Create a resource (sometimes a little more universally, cannot be bookmarked)
+Put-	Update an existing resource (replaces the entire object with a new 	object)
+Delete-	Delete an existing resource
+Patch-	Patch is a PARTIAL update (overwrite ONLY the fields it needs to)
+Options- Returns available functionalities (operations the server can take)
+Head-	It similar to a GET except it doesn't return a body.
+--Trace
+--Connect
+
+
+>>>What is idempotency? And what is an idempotent Http method?
+>a functionality constructed in a such a way..that performing the functionality 2 ore
+	more times will NOT yield a different result than using the functionality
+	a single time
+
+	>example
+		int num=0; //my object is to make num equal to 1
+		for(int i=0; i<200; i++){ //my functionality is being done 200 times
+			num++; //is this idempotent? no
+		}
+
+
+		int num=0; //my object is to make num equal to 1
+		for(int i=0; i<200; i++){ //my functionality is being done 200 times
+			num= 1; //is this idempotent? yes
+		}
+--------------------------------
+		IDEMPOTENCY		SAFE
+GET		yes			yes
+POST		no			no
+PUT		yes			no
+DELETE		yes			no
+PATCH		no			no
+OPTIONS		yes			yes
+HEAD		yes			yes
+
+
+>>>>What is a safe http method?
+>A safe method is an http method that doesn't alter the state of your
+	application (in other words, it doesn't change your DB)
+
+
+>>>What makes an api RESTful?
+>An API that follows the REST constraints
+ (REST is an architectual style)
+
+>>>What are the REST constraints?
+
+1. Uniform Interface
+	In short, each entity's api (uri) should follow the same pattern.
+	No entity should have more than one uri.
+2. Client Server
+	The client and server are separate entities. They exist independently.
+	(the client should only know URIs. The API is encapsulated)
+3. Stateless
+	Servers don't store any data about latest HTTP request. it treats each request
+	as though it is a new request/user.
+	To put it another way, the server wont remember who you are.
+	(you'd be using webtokens and cookies/localstorage)
+	(No session, no history)
+4. Cacheable
+	Resources must declare themselves as cacheable
+5. Layered System
+	Client cannot tell whether it's connect to the original server or some
+	other intermediate server.
+6. Code On demand (optional)
+	You're able to send functional code if necessary (like a UI widget)
+	Not only static code (static=unchanging)
+
+
+>>>>Let's take a second to talk about the Richardson Maturity Model
+> https://martinfowler.com/articles/richardsonMaturityModel.html
+
+Level 1 tackles the question of handling complexity by using divide and conquer, breaking a large service endpoint down into multiple resources.
+Level 2 introduces a standard set of verbs so that we handle similar situations in the same way, removing unnecessary variation.
+Level 3 introduces discoverability, providing a way of making a protocol more self-documenting.
+
+(^acquired from the url)
+
+
+//////////////////THIS IS AN EXAMPLE OF UNIFORM API
+mywebsite.net/api/{myModel}
+
+//select all (GET http method)
+mywebsite.net/api/rebursement
+
+//select speicific id (GET http method)
+mywebsite.net/api/rebursement/{id}
+mywebsite.net/api/rebursement/id/{id}
+
+//create (POST http method)
+mywebsite.net/api/rebursement       <---the body will contain the new JSON to be put into the DB
+
+//update (PUT http method)
+mywebsite.net/api/rebursement           <-----the body of the request will contain the necessary ID
+mywebsite.net/api/rebursement/{id}        <---the body will contain the new JSON to replace the existing record
+mywebsite.net/api/rebursement/update/{id} 
+
+//delete (DELETE http method)
+mywebsite.net/api/rebursement           <-----the body of the request will contain the necessary ID
+mywebsite.net/api/rebursement/{id}
+mywebsite.net/api/rebursement/delete/{id}
+
+
+
+your master servlet will have a URL-PATTERN:
+    " /api/reimbursement/* "
+
+
+
+
+
+
+
+
+
+
+
+

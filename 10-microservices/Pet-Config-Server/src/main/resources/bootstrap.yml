@@ -5,3 +5,7 @@ spring:
         git:
           uri: https://github.com/tachester/myconfigserverexample
           force-pull: true
+          
+#to see the configuration in their json form
+#  localhost:9005/pet-config-client/default
+#  localhost:9005/pet-config-client/dev

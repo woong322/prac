@@ -88,3 +88,19 @@ BASE Example:
 	What this means is....that there was a point where if the system queried the DB it
 	would have had incorrect information.	
 
+
+Talking about Zuul Filters:
+https://i1.wp.com/wp.laravel-news.com/wp-content/uploads/2020/03/scount-featured.jpg?fit=2200%2C1100&ssl=1?resize=2200%2C1125
+
+
+
+--------
+PET CONFIG CLIENT/SERVER EXAMPLE
+
+1st to load			bootstrap.properties  (localmachine)
+2nd				application.properties (localmachine)
+3rd				application.properties (github/remote)
+4th				[my-app-name].properties (github/remote)
+5th				[my-app-name]-[currentprofile].properties (github/remote)
+
+the later loads have higher precedence
