@@ -1,0 +1,43 @@
+
+
+
+
+///////////////////////
+LET'S CONNECT TO OUR EC2 INSTANCE IN AWS
+///////////////////////
+
+my public DNS:	ec2-18-218-145-9.us-east-2.compute.amazonaws.com
+my public ip:	18.218.145.9
+
+ssh -i [path to my pem file] ec2-user@[my public dns]
+ssh -i ./trevasaurusrex.pem ec2-user@ec2-18-218-145-9.us-east-2.compute.amazonaws.com
+
+
+
+(to exit an ec2 just type "exit" into your terminal)
+sudo means "super user do"
+
+------let's install git on our ec2
+	sudo yum install git -y
+-----let's pull the training repo to this ec2
+	git clone [url]
+-----navigate to the script i've created for you then run that script
+	sh [script-name]
+	sh full-script.sh
+
+------next, nagivate to our Pet-1 project (in the same folder as its pom.xml
+	mvn clean package
+----next, navigate into our target folder
+-----run the jar file
+	java -jar docker-springboot-demo.jar
+-------can we run it detached?
+	nohup java -jar docker-springboot-demo.jar &
+-------let's talk about how to kill a detached process
+	----first, let's find its pid
+	sudo ps aux | grep 'jar'
+	----next, kill it
+	sudo kill -9 [pid]
+
+
+
+
