@@ -1,0 +1,144 @@
+>>>>>>>What is AWS?
+>Stands for Amazon Web Service
+>It's a cloud computing service
+> https://northslopechillers.com/wp-content/uploads/2019/07/Cool-Server-Room.jpg
+>https://i.pinimg.com/originals/03/a4/d7/03a4d707fb0d881d916c5927c29472f5.jpg
+> no upfront cost or ongoign commitments
+>the services are designed to work together
+> services can be things like: compute, storage, database management, and network
+>There are HUNDREDS of service, and the number changes each year
+>Regions - Geographic locations where AWS is accessible. 16+
+>Availability zones (AZ) - Data Centers. Minimum 2 per reion. 42+
+>pay for what you use
+
+
+
+Let's deviate from AWS for a moment to talk about TYPES of IT services that can be provide on the cloud
+>IaaS - Infrastructure as a service
+	>>example: virtual machines, processory, memory, harddrives, operating systems
+	>> this is for system architechs
+>PaaS - Platform as a service
+	>>example: operating systems, data systems, web servers, etc
+	>> this is for the devs
+>Saas - Software as a service
+	>>example: Microsoft 365, gSuite, dropbox, slack, Salesforce, etc
+	>> this is for the end user
+
+(bonus, Faas - Functions as a service)
+(bonus, GaaS - Gaming as a service)
+
+
+
+
+------NOW back to AWS------
+
+AWS: RDS
+>Relational Database Service
+>types: Oracle SQL, PostgreSQL, MySQL, etc
+>some of the services it provides: automated backup, database snapshots (user initiated),
+	multiple AZ, automatic updates
+>out of the box
+
+AWS: EC2
+>Elastic Compute Cloud
+>virtual machine in the cloud
+>benefits: scalable, Integrated with other AWS serives. Reliable. Secure. Inexpensive.
+>It can use instance storage (part of this instance) or Elastic Block Stores (EBS) for storage
+>It can use Amazon Machine Images (AMI) to be started in a certain configuration (specific OS, configs, etc)
+>There are different sizes of EC2s, for exampple: t2.micro, t3.micro, t2.large, etc
+>There are ways you can even specialize your memory, storage, processor, etc
+
+
+AWS: AMI
+>Amazon Machine Image
+>Provides the information required to launch an instance (EC2)
+>AWS offers many base AMI's for EC2 launching
+>you can create yoru own AMI based on a snapshot of an EC2
+>I like to think of an AMI like flashdrives or ps2 memory cards
+
+AWS: EBS
+>Elastic Block Stores
+>virtual volumes (of storage) attached to one EC2 at a time
+>can be copied as snapshots
+>They can be: SSD, HDD, and magnetic
+
+AWS: ELB
+>Elastic Load Balancer
+>virtual router
+>balances the load of instances equally
+	>>so like, if you have 1 instance at 90% capacity and another at 10% capacity,
+		would this be an issue?
+	>>ELB distributes the load evenly to each instance
+>makes your infrastructure more resilient
+
+AWS: autoscaling
+>dynamically deploy or shutdown instances depending on a specific metric
+	>>for example: when your instance's traffic exceeds 70% capacity AWS will automatically
+		spin up a new EC2 and use your AMI to start the VM
+	>>on the other end, you could make it so that if the traffic is lowr than 10% then you
+		destroy the instance
+>so now you don't need a human monitoring the servers 24 hours a day
+>makes your infrastructure more resilient
+>works well with ELB
+
+AWS: Security Groups
+>All instances in AWS need to be part of a Security Groups
+>They provide transport layer security for your instances
+>by default all network traffic is denied
+>Security Group are a virtual white list
+	>>you define which IPs and ports are allowed to access your instances
+	>>you ALSO define whih of your ports are allowed to send information out.
+>opening all ports neutralizes this security
+>many of your instances can use the same security group
+
+AWS: S3
+>Simple Storage Service
+>provides highly available and scalable cloud storage
+>out of the box
+>object based storage. Objecs are: plain files, images, videos, etc
+>very cheap
+>objecdts are stored in buckets
+>dropbox uses S3 for its infrastructure
+
+
+AWS: IAM
+>Identity and Access Management
+>this allows one to control access to a group of services within AWS
+>can be used by companies to give employees access to resources
+
+AWS: Lambda
+>lambda are sections of code written to automate some functionality (basically a script)
+>they can be triggered from a multitude of events
+>no ec2 required
+>pay per trigger
+
+AWS: ROUTE 53
+>Domain Naming Service
+>can route traffic to different domains inside of your AWS
+>basically, a virtual router
+
+AWS: VPC
+>virtual private cloud
+
+AWS: Glacier
+>cold storage, cost efficient and slow to access
+>VERY cheap storage space, you can get a LOT of space for little cost
+
+
+AWS: Snow Ball
+>Amazing will mail you your data if you want it that bad
+
+AWS: Snow Mobile
+>Amazing will drive you your data
+
+
+
+
+
+
+
+
+
+
+
+
