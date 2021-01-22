@@ -52,15 +52,48 @@ Common Linux Commands:
 	6 = read + write
 	7 = all
 
+>>ps
+	>>allows us to look at current processes that are
+		running on our machine
+	>>some of the optiosn for ps are
+		a = show processes for all users
+		u = display the process's user/owner
+		x = also show processes not attached to a terminal
+	>>so we can run commands like this
+		sudo ps aux | grep 'jar'
+		>>this would file all process with "jar" in the description
+
+>>kill
+	>>kill -l
+		this let's us see all the kill codes
+	>>for example:
+		signal name	signal value	signal effect
+		SIGHUP		1		Hangup
+		SIGINT		2		Interrupt from keyboard
+		SIGKILL		9		Kill signal
+		SIGTERM		15		Terminal signal
+		SIGSTOP		17, 19, 23	Stop the process
+	>>example syntax
+		sudo kill -9 [pid]
+		sudo kill -9 37899
+
 
 >>there are MORE commands, this is just a taste, for example "cat"
+
+>>What is the ps command
+
+
+
+
 
 
 
 >>>>Also, what is yum?
 >yum is a package manager, it allows you to download and install software on your linux machine
-
-
+>>>>>Also, what is ssh?
+>secure shell
+>a way to securely transfer information/data from one place to another
+>we will use ssh to get into our EC2
 
 
 
@@ -81,27 +114,66 @@ ssh -i ./trevasaurusrex.pem ec2-user@ec2-52-14-14-207.us-east-2.compute.amazonaw
 (to exit an ec2 just type "exit" into your terminal)
 
 
+
+//////////////////////
+ONCE WE'RE CONNECTED LET'S CONFIGURE OUR INSTANCE WITH OUR SOFTWARES/PACKAGES
+//////////////////////
 -----let's start by creating a simple directory
 	mkdir git_repos
+
 ------let's install git on our ec2, so we can use the script that i've uploaded
 	sudo yum install git -y
+
 -----let's pull the training repo to this ec2
 	git clone [url]
+
 -----navigate to the script i've created for you then run that script
 	sh [script-name]
 	sh full-script.sh
+	>>>the script i've prepared installs updates for yum,
+		nodejs, java 8, maven, jenkins, docker
+	>>>I did NOT create this script off the top of my head,
+		I got to the various websites and go to their
+		linux installation pages to get the pieces of the script
+	>>>for example:
+		https://docs.docker.com/engine/install/ubuntu/
+
+
+
+////////////////////////////
+NOW, LET'S SEE IF WE CAN RUN OUR SPRINGBOOT PROJECT ON A DEDICATE SERVER
+////////////////////////////
+-------side topic: maven lifecycle
+	example: mvn clean package
+	>>https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
 
 ------next, nagivate to our Pet-1 project (in the same folder as its pom.xml
 	mvn clean package
+
 ----next, navigate into our target folder
------run the jar file
+----then run the jar file
 	java -jar docker-springboot-demo.jar
+
+------how do we kill the server?
+	hit ctrl + c to kill the process
+
 -------can we run it detached?
 	nohup java -jar docker-springboot-demo.jar &
+
+	>>the "&" runs the process detached from the terminal
+		so that you may still type in terminal commands
+		BUT if the process has output, it will still put
+		that output into this terminal
+	>>nohup is a command that lets you start a process, put the output
+		of that process into another file, AND ignore hangup signals
+		>notice, that our output is now appear in a file
+		called "nohup.out"
+
 -------let's talk about how to kill a detached process
-	----first, let's find its pid
+	>>first, let's find its pid
 	sudo ps aux | grep 'jar'
-	----next, kill it
+	
+	>>next, kill it
 	sudo kill -9 [pid]
 
 
