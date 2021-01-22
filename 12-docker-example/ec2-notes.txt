@@ -35,6 +35,8 @@ Common Linux Commands:
 	>>downloads from a URL
 >>nano/vi
 	>>opens a text editor
+	>>for vi editor commands
+		https://www.cs.colostate.edu/helpdocs/vi.html
 >>sudo
 	>>allows you to run commands as a super user
 	>>super user do (sudo)

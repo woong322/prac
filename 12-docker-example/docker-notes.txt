@@ -1,0 +1,150 @@
+-----------------------------What is a container? and how does it compare to a VM?
+What is a container?
+	>a container is a contained environment that provides optimal libraries/dependencies
+		for a specific application or process; in short, it's a micro environment.
+	>in docker, this is also a running insatnce of a docker image
+What is a docker image?
+	>it's esseentially a blueprint for a docker container.
+	>it's used to create one or more containers
+	>a docker image can be created from Dockerfile
+What is a dockerfile?
+	>it's essentially a config file that docker utilizes to initialize your dockerimages
+
+
+https://www.weave.works/assets/images/bltb6200bc085503718/containers-vs-virtual-machines.jpg
+
+	containers					VMs
+one OS (lightweight)				each VM has its own OS (heavy)
+not a lot of disk space				uses a lot of disk space
+quick to startup				slow to startup
+shared resources				total isolation of resources
+
+
+"containers vs VMs" is NOT the question, you will sometimes see docker containers inside of
+VMs. They will be used toegether to obtain the benefits of both.
+
+
+
+-----------------------let's answer the main question: What is Docker?
+> https://docs.docker.com/get-started/overview/
+> taken from the website
+>Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.
+>Docker provides the ability to package and run an application in a loosely isolated environment called a container. The isolation and security allow you to run many containers simultaneously on a given host.
+
+>docker client and docker server
+	https://www.oreilly.com/library/view/continuous-delivery-with/9781787125230/assets/cadc3363-6814-489b-a770-58dd9ead6f56.png
+
+--------------------------Why use docker?
+>OS compatibility/dependencies issues
+	>>not all technologies work on all OS or environments, we can use containers to standardize the envornment for our team
+>lots of setup during updates
+	>>we can attempt to minimize the amount of envonrment setup for our team
+>dev/test/prod envornments can all be different
+	>>>again, containers can standardize the environments
+
+
+
+
+
+
+
+
+------------how do we install docker?
+>well, let's head to the webssite and go get the instructions
+> https://docs.docker.com/engine/install/ubuntu/
+> but i've already given you a script to install docker
+
+--------for later: if you want to play around with docker
+>docker will actually spin up a container for you to mess around with docker in
+> https://labs.play-with-docker.com/
+
+
+
+-----------let's make our first docker container
+>run         sudo docker run hello-world
+
+>it worked....so where did it come from?
+	 https://hub.docker.com/
+
+
+--------------docker commands
+sudo docker version
+sudo docker info
+	>>here we can see information about docker's state, including how many containers and images are present
+
+
+sudo docker pull [image name]
+sudo docker pull [image name]:[version/tag]
+	>copies dockerimages from docker hub, similar to pulls in git
+
+sudo docker images
+	(show all current docker images)
+sudo docker ps -a
+	(show all current containers)
+sudo docker inspect [container name]
+	>see a json of the state of a container
+
+sudo docker run [image name]
+	>makes a container out of an image
+sudo docker run -d [image name]
+	>run a container detached from the terminal...aka runs in the background
+
+sudo docker build -f [filename] -t [newimagename] [path]
+sudo docker build -f Dockerfile -t docker-springboot-demo .
+	>this will turn a dockerfile into a docker image
+
+sudo docker run -d --name [customName] -p [outside port]:[inside container port] [dockerimage]
+sudo docker run -d --name customName1 -p 9001:9015 docker-springboot-demo
+	>this will run a custom docker image and turn it into a container
+
+sudo docker start [container name]
+	>start a container
+sudo docker stop [container name]
+	>stop a container
+sudo docker rm [container name]
+	>delete a container
+sudo docker rmi [image name]
+	>delete an image
+
+....a little more advanced.....
+sudo docker stop $(sudo docker ps -aq)
+	>stops all containers
+sudo docker rm $(sudo docker ps -aq)
+	>removes all containers
+sudo docker rmi $(sudo docker images -aq)
+	>removes all docker images
+
+
+
+
+---------docker file keywords
+example:
+	FROM, RUN, CMD, EXPOSE, ENV, ADD, COPY, ENTRYPINT, WORKDIR, etc
+
+
+https://docs.docker.com/engine/reference/builder/#syntax
+
+
+
+---------here is the dockerfile we'll be using in this example
+FROM openjdk:8
+ADD target/docker-springboot-demo.jar	docker-springboot-demo.jar
+EXPOSE 9015
+ENTRYPOINT ["java", "-jar", "docker-springboot-demo.jar"]
+
+
+
+-----i'll rant about container orchestartion for a bit
+> look into docker swarm and/or kubernetes, etc.
+> container orchestration technologies make container communication a ton easier
+> they can also keep track of your dockers and containers accross various VMs 
+> inside of dockerswarm (and other orechestration technologies) you'll have a manaager dockers
+	and a series of worker dockers. The manage can issue commands to organize all of your
+	dockers across various VMs/EC2s/etc.
+	>orchestration can help load balance
+	>it can help with networking accross the containers
+	>it can issue commands that give minimum numbers of any given container
+	   and keep track of the count of that container type accross all workers
+	> and much more
+> https://info.crunchydata.com/hs-fs/hubfs/docker-cluster-v2.png?width=653&height=437&name=docker-cluster-v2.png
+
