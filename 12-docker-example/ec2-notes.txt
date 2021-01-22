@@ -1,23 +1,89 @@
+>>>>>What is linux?
+>It's an opensource operating system; FREE
+>It's lightweight and uses system resources efficiently
+>while linux isn't used on many personal desktops, it dominates the market of servers
+>there are many linux distributions, for example: redhat enterprise linux (RHEL), ubuntu, etc
+
+Common Linux Commands:
+>ls
+	>>list files in current directory
+>ls -a
+	>>list even the hidden files, the "-a" is a command flag
+>cd
+	>>change directory (directory=folder)
+>man
+	>>manual - like a tooltip option
+>pwd
+	>>print working directory
+>mkdir
+	>>make a directory
+>rmdir
+	>>remove a director
+>touch
+	>>makes a new file
+>cp
+>cp [file source] [file destination]
+	>>copies a file
+>mv
+	>>move a file
+>echo
+	>>print whatever message it is given to the console
+	>> or you can use it to input into a file
+>grep
+	>>search files or folders
+>>wget
+	>>downloads from a URL
+>>nano/vi
+	>>opens a text editor
+>>sudo
+	>>allows you to run commands as a super user
+	>>super user do (sudo)
+>>chmod
+	>>changing file permissions
+	>>chmod 777 test.txt
+	
+	[owner][group][everyone else]
+	0 = no permission
+	1 = execute
+	2 = write
+	3 = execute + write
+	4 = read
+	5 = read + execute
+	6 = read + write
+	7 = all
+
+
+>>there are MORE commands, this is just a taste, for example "cat"
+
+
+
+>>>>Also, what is yum?
+>yum is a package manager, it allows you to download and install software on your linux machine
+
+
 
 
 
 
 ///////////////////////
 LET'S CONNECT TO OUR EC2 INSTANCE IN AWS
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-methods.html
 ///////////////////////
 
-my public DNS:	ec2-18-218-145-9.us-east-2.compute.amazonaws.com
-my public ip:	18.218.145.9
+my public DNS:	ec2-52-14-14-207.us-east-2.compute.amazonaws.com
+my public ip:	52.14.14.207
+
+(luckily for us, git bash is also an ssh client!!! So we're going to open a gitbash in the same directory as our pem file)
 
 ssh -i [path to my pem file] ec2-user@[my public dns]
-ssh -i ./trevasaurusrex.pem ec2-user@ec2-18-218-145-9.us-east-2.compute.amazonaws.com
-
-
+ssh -i ./trevasaurusrex.pem ec2-user@ec2-52-14-14-207.us-east-2.compute.amazonaws.com
 
 (to exit an ec2 just type "exit" into your terminal)
-sudo means "super user do"
 
-------let's install git on our ec2
+
+-----let's start by creating a simple directory
+	mkdir git_repos
+------let's install git on our ec2, so we can use the script that i've uploaded
 	sudo yum install git -y
 -----let's pull the training repo to this ec2
 	git clone [url]
