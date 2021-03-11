@@ -1,14 +1,14 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${REVATURE_DB_URL}/Movies
-    password: ${REVATURE_DB_PASSWORD}
-    username: orkundb
+    url: jdbc:postgresql://${AWS_DB_URL}/BankingApp
+    password: ${AWS_DB_PASSWORD}
+    username: ${AWS_DB_USERNAME}
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     hibernate: 
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         temp:
@@ -18,4 +18,4 @@ spring:
             non_contextual_creation: true    
             
 server:
-  port: 1991
+  port: 4200
